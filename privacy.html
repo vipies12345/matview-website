@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Mat View | Engineering Lab Solutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Times New Roman", Times, serif ;
+            background: #f5f7fa;
+            color: #2c3e50;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 40px;
+            background: #D1DBE6;
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            flex-wrap: wrap;
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .nav-right {
+            display: flex;
+            gap: 15px;
+        }
+
+        nav a {
+            color: #111c4e;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 8px 16px;
+            border-radius: 20px;
+            background: transparent;
+            transition: all 0.3s ease;
+            border: 2px solid #111c4e;
+            box-shadow: 0 0 10px rgba(255, 242, 102, 0.3);
+        }
+
+        nav a:hover {
+            background-color: #02075F;
+            color: #F7F7F7;
+            transform: scale(1.1);
+            box-shadow: 0 0 20px #111c4e, 0 0 30px #FFFF6B;
+        }
+
+        .logo {
+            width: 60px;
+            height: auto;
+        }
+
+        .text-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .title {
+            font-size: 38px;
+            font-weight: bold;
+            color: #111c4e;
+        }
+
+        .tagline {
+            font-size: 19px;
+            color: #71323B;
+        }
+
+header {
+    position: fixed;
+    top: 100px;
+    width: 100%;
+    z-index: 999;
+    background-color: #E0F5F5;
+    padding: 10px 40px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+main {
+    margin-top: 120px; /* Adjust to avoid content hiding under header */
+}
+        header h1 {
+            margin: 0;
+            color: #111c4e;
+            font-size: 32px;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 40px auto;
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+        }
+
+        h2 {
+            color: #02075F;
+            margin-top: 30px;
+            font-size: 24px;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        ul {
+            margin-left: 20px;
+            padding-left: 0;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        footer {
+            background-color: #D1DBE6;
+            color: #111c4e;
+            text-align: center;
+            padding: 25px 20px;
+            margin-top: 40px;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-left">
+            <img src="images/logo.png" alt="MatView Logo" class="logo" />
+            <div class="text-group">
+                <div class="title">Mat View</div>
+                <div class="tagline">Innovate & Educate</div>
+            </div>
+        </div>
+        <div class="nav-right">
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="service.html">Service</a>
+            <a href="policy.html">Policy</a>
+        </div>
+    </nav>
+       <header>
+        <h1>Privacy Policy</h1>
+    </header>
+
+    <main>
+        <p>At <strong>MatView</strong>, protecting your personal information is our top priority. We recognize that your data belongs to you, and we are committed to securely storing and responsibly processing the information you share with us.</p>
+
+        <h2>Collection and Use of Personal Information</h2>
+        <p>We value your trust. Therefore, we collect only the minimal required information, with your consent, and use it solely for its intended purpose. We do not share your personal information with third parties without your awareness or approval.</p>
+
+        <h2>Data Protection and Security Measures</h2>
+        <p>MatView is dedicated to protecting your personal data using the following measures:</p>
+        <ul>
+            <li><strong>Technical Security:</strong> SSL (Secure Sockets Layer) encryption is used during transmission of sensitive data like credit card or net banking details.</li>
+            <li><strong>Internal Management:</strong> Strict internal protocols are implemented to manage and safeguard your information.</li>
+            <li><strong>Physical Security:</strong> Physical protection of servers and systems against unauthorized access.</li>
+        </ul>
+
+        <h2>Continuous Improvement</h2>
+        <p>We regularly review and enhance our privacy policies to meet new challenges. MatView does not and will not sell or rent your personal information under any circumstances, except:</p>
+        <ul>
+            <li>As required by law or legal authority.</li>
+            <li>With your explicit consent.</li>
+            <li>For aggregated or anonymized statistical purposes that do not disclose personal identity.</li>
+        </ul>
+
+        <h2>Data Storage</h2>
+        <p>Your data is stored securely using robust security practices, including:</p>
+        <ul>
+            <li><strong>Password Protection:</strong> Access is limited to authorized personnel only.</li>
+            <li><strong>Encryption:</strong> Data may be encrypted based on sensitivity and need.</li>
+            <li><strong>Comprehensive Controls:</strong> Managerial, technical, operational, and physical measures aligned with industry standards.</li>
+        </ul>
+
+        <h2>Access to Information</h2>
+        <p>Only MatView employees or authorized contractors, under strict confidentiality, have access to your registration and financial information. Violations are subject to disciplinary actions, including termination and legal prosecution.</p>
+
+        <h2>Protecting Your Anonymity</h2>
+        <p>You may choose login credentials that protect your personal identity. We ensure that only necessary details are accessed to deliver requested services.</p>
+
+        <h2>Third-Party Access</h2>
+        <p>With your consent, we may connect to your financial institutions to complete transactions. Additionally, third-party services like courier companies may access your delivery information to fulfill orders.</p>
+
+        <p>Thank you for trusting MatView. We are committed to delivering secure, seamless, and inspiring digital experiences while safeguarding your personal information.</p>
+
+        <p>For questions or concerns regarding our privacy policy, please contact us at:</p>
+        <ul>
+            <li>Email: <a href="mailto:info@matview.co.in">info@matview.co.in</a></li>
+            <li>Phone: 02975-356173</li>
+        </ul>
+    </main>
+
+    <footer>
+        &copy; 2025 MatView Private Limited. All Rights Reserved.
+    </footer>
+
+</body>
+</html>

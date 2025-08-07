@@ -1,123 +1,206 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Mat View</title>
+    <meta charset="UTF-8" />
+    <title>Mat View | Engineering Lab Solutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            background-color:#e6f0ff;
-            font-family: Times New Roman", Times, serif;
-            margin: 10;
-            padding: 20px;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-    nav {
-      position: absolute;
-      top: 50px;
-      left: 0;
-      width: 100%;
-      background-color: #e6f0ff;
-      padding: 12px 0;
-      display: flex;
-      justify-content: center;
-      gap: 80px;
-      z-index: 1;
-    }
+        body {
+            font-family: 'sans', Times New Roman;
+            background: #f5f7fa;
+            color: #2c3e50;
+        }
 
-    nav a {
-      color: #000000;
-      text-decoration: none;
-      font-size: 18px;
-      font-weight: bold;
-      transition: color 0.3s ease;
-    }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 40px;
+            background: #D1DBE6;
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            flex-wrap: wrap;
+        }
 
-    nav a:hover {
-      color: #e6f0ff;
-    }
-
-
-        .header {
+        .nav-left {
             display: flex;
             align-items: center;
-            position: relative;
+            gap: 15px;
+        }
+
+        .nav-right {
+            display: flex;
+            gap: 15px;
+        }
+
+        nav a {
+            color: #111c4e;
+            text-decoration: none;
+            font-size: 20px;
+            padding: 8px 18px;
+            border-radius: 20px;
+            background: transparent;
+            transition: all 0.3s ease;
+            border: 2px solid #111c4e;
+            box-shadow: 0 0 10px rgba(255, 242, 102, 0.3);
+        }
+
+        nav a:hover {
+            background-color: #02075F;
+                color: #F7F7F7;
+               transform: scale(1.1);
+               box-shadow: 0 0 20px #111c4e, 0 0 30px #FFFF6B;
         }
 
         .logo {
-            width: 80px; /* Adjust as needed */
+            width: 60px;
             height: auto;
-            margin-right: 15px;
-            z-index: 2; /* in front */
         }
 
         .text-group {
             display: flex;
             flex-direction: column;
-            position: relative;
-        }
-
-          .background-logo {
-            position: absolute;
-            top: -20px;
-            left: 20px;
-            width: 110px; /* Larger background logo */
-            height: auto;
-            opacity: 0.1; /* Make it very light */
-            z-index: 1; /* behind text */
         }
 
         .title {
-            font-size: 36px;
-            color: #111c4e;
+            font-family: Times New Roman;
+            font-size: 42px;
             font-weight: bold;
-            margin: 0;
-            z-index: 2; /* in front of background logo */
+            color: #111c4e;
         }
 
         .tagline {
-            font-size: 20px;
-            color: #8a3c48;
-           / font-weight: bold;/
-            margin: 5px 0 0 0;
-            z-index: 2; /* in front of background logo */
+            font-size: 18px;
+            color: #71323B;
         }
-        .coming-soon {
-    font-size: 50px;
-    font-weight: bold;
-    text-align: center;
-    color: #1600A3;
-    animation: pulse 2s infinite;
-    margin-top: 50px;
-    font-family: 'Arial Black', sans-serif;
-    text-shadow: 2px 2px #ddd;
-    }
 
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.1); }
-    100% { transform: scale(1); }
-}
+        .section {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            margin: 40px auto;
+            max-width: 1000px;
+            background: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+        }
+
+        .section img {
+            width: 50%;
+            object-fit: cover;
+        }
+
+        .text-container {
+            padding: 20px;
+            width: 50%;
+        }
+
+        .text-container h2,
+        .text-container h3 {
+            color: #1abc9c;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background: #D1DBE6;
+            color: #111c4e;
+            text-align: center;
+            padding: 25px 20px;
+            font-size: 0.9rem;
+            margin-top: 50px;
+        }
+
+        @media (max-width: 768px) {
+            .section {
+                flex-direction: column;
+            }
+
+            .section img,
+            .text-container {
+                width: 100%;
+            }
+
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .nav-right {
+                flex-direction: column;
+                width: 100%;
+            }
+        }
+
     </style>
 </head>
 <body>
 
- <nav>
-    <a href="home.html">Home</a>
-    <a href="products.html">Products</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+    <nav>
+        <div class="nav-left">
+            <img src="images/logo.png" alt="Logo" class="logo" />
+            <div class="text-group">
+                <div class="title">Mat View</div>
+                <div class="tagline">Innovate & Educate</div>
+            </div>
+        </div>
+        <div class="nav-right">
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="service.html">Service</a>
+            <a href="policy.html">Policy</a>
+        </div>
+    </nav>
 
-    <div class="header">
-        <img src="images/logo.png" alt="Mat View Logo" class="logo">
-        <div class="text-group">
-            <!-- Background lighter logo -->
-            <img src="images/logo.png" alt="Background Logo" class="background-logo">
-            <!-- Main text -->
-            <div class="title">Mat View</div>
-            <div class="tagline">Innovate & Educate</div>
+    <div class="section">
+        <img src="images/img1.jpg" alt="Welcome" />
+        <div class="text-container">
+            <h2>Welcome</h2>
+            <p style="white-space: pre-line; text-align: justify;">
+            Welcome to MatView, a leading manufacturer of engineering lab equipment.We develop innovative microgrid and electric vehicle research tools including Matlab and LabVIEW-based hardware-in-loop systems for academic and industrial use.</p>
         </div>
     </div>
- <div class="coming-soon">COMING SOON</div>
+
+    <div class="section">
+        <img src="images/img2.jpg" alt="Education" />
+        <div class="text-container">
+            <h3>Education & Research</h3>
+            <p style="white-space: pre-line; text-align: justify;">
+            Explore our advanced solutions tailored for universities, technical institutes, and R&D labs involved in smart grid and e-mobility projects.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <img src="images/img3.png" alt="Matlab" />
+        <div class="text-container">
+            <h3>Matlab-based Ecosystems</h3>
+            <p style="white-space: pre-line; text-align: justify;">
+            We offer Matlab-compatible hardware solutions, enabling seamless simulation and testing of power systems, control algorithms, and electric vehicle models.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <img src="images/img4.png" alt="LabVIEW" />
+        <div class="text-container">
+            <h3>LabVIEW Integration</h3>
+            <p style="white-space: pre-line; text-align: justify;">
+            Our LabVIEW-based platforms provide real-time experimentation, data acquisition, and control for academic and industrial automation projects.</p>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2025 MatView Private Limited. All Rights Reserved.
+    </footer>
+
 </body>
 </html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Mat View | Engineering Lab Solutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Times New Roman", Times, serif ;
+            background: #f5f7fa;
+            color: #2c3e50;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 40px;
+            background: #D1DBE6;
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            flex-wrap: wrap;
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .nav-right {
+            display: flex;
+            gap: 15px;
+        }
+
+        nav a {
+            color: #111c4e;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 8px 16px;
+            border-radius: 20px;
+            background: transparent;
+            transition: all 0.3s ease;
+            border: 2px solid #111c4e;
+            box-shadow: 0 0 10px rgba(255, 242, 102, 0.3);
+        }
+
+        nav a:hover {
+            background-color: #02075F;
+            color: #F7F7F7;
+            transform: scale(1.1);
+            box-shadow: 0 0 20px #111c4e, 0 0 30px #FFFF6B;
+        }
+
+        .logo {
+            width: 60px;
+            height: auto;
+        }
+
+        .text-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .title {
+            font-size: 38px;
+            font-weight: bold;
+            color: #111c4e;
+        }
+
+        .tagline {
+            font-size: 19px;
+            color: #71323B;
+        }
+
+header {
+    position: fixed;
+    top: 100px;
+    width: 100%;
+    z-index: 999;
+    background-color: #E0F5F5;
+    padding: 10px 40px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+main {
+    margin-top: 120px; /* Adjust to avoid content hiding under header */
+}
+        header h1 {
+            margin: 0;
+            color: #111c4e;
+            font-size: 32px;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 40px auto;
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+        }
+
+        h2 {
+            color: #02075F;
+            margin-top: 30px;
+            font-size: 24px;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        ul {
+            margin-left: 20px;
+            padding-left: 0;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        footer {
+            background-color: #D1DBE6;
+            color: #111c4e;
+            text-align: center;
+            padding: 25px 20px;
+            margin-top: 40px;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-left">
+            <img src="images/logo.png" alt="MatView Logo" class="logo" />
+            <div class="text-group">
+                <div class="title">Mat View</div>
+                <div class="tagline">Innovate & Educate</div>
+            </div>
+        </div>
+        <div class="nav-right">
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="service.html">Service</a>
+            <a href="policy.html">Policy</a>
+        </div>
+    </nav>
+
+   <header>
+    <h1>Shipping Policy</h1>
+  </header>
+<main>
+        <p><strong>Free Shipping Across India</strong></p>
+        <p>We are pleased to offer free shipping on all orders across India. Our goal is to ensure that your purchase reaches you promptly and in excellent condition.</p>
+
+        <h2>Quality and Performance Checks</h2>
+        <p>All our products undergo rigorous quality and performance checks before dispatch. This ensures that only the highest quality products, meeting our strict standards, reach our customers.</p>
+
+        <h2>Order Processing Time</h2>
+        <p>Orders are typically dispatched within 1–2 working days following successful quality and performance verification. We strive to process and ship your order as swiftly as possible.</p>
+
+        <h2>Dispatch and Tracking</h2>
+        <p>Once your order has been dispatched, you will receive an email containing tracking details, allowing you to monitor the shipment and estimate the delivery date.</p>
+
+        <h2>Estimated Delivery Time</h2>
+        <p>Delivery times vary based on your location. Estimated timeframes are as follows:</p>
+        <ul>
+            <li><strong>South India:</strong> 15–30 days</li>
+            <li><strong>North India:</strong> 10–20 days</li>
+        </ul>
+
+        <h2>Delivery Serviceability</h2>
+        <p>Delivery timelines are based on our standard delivery partners and depend on their service areas. In cases where extended delivery time is anticipated, we will notify you at the time of dispatch.</p>
+
+        <h2>Important Information</h2>
+        <ul>
+            <li><strong>Address Accuracy:</strong> Please ensure your shipping address and contact details are accurate to avoid delays or misdelivery.</li>
+            <li><strong>Business Days:</strong> Our working days are Monday to Friday, excluding public holidays. Orders placed during weekends or holidays will be processed on the next working day.</li>
+            <li><strong>Unexpected Delays:</strong> While we aim to deliver within estimated timeframes, unforeseen circumstances such as weather, strikes, or transport disruptions may cause delays. We appreciate your understanding.</li>
+        </ul>
+
+        <h2>Customer Support</h2>
+        <p>If you have any questions regarding your order or shipping status, please reach out to our customer support team:</p>
+        <ul>
+            <li>Email: <a href="mailto:info@matview.co.in">info@matview.co.in</a></li>
+            <li>Phone: 02975-356173</li>
+        </ul>
+
+        <p>Thank you for shopping with MatView. We value your trust and are committed to delivering the best service possible.</p>
+    </main>
+
+    <footer>
+        &copy; 2025 MatView Private Limited. All Rights Reserved.
+    </footer>
+
+</body>
+</html>

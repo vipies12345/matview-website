@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Mat View | Engineering Lab Solutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Times New Roman", Times, serif ;
+            background: #f5f7fa;
+            color: #2c3e50;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 40px;
+            background: #D1DBE6;
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            flex-wrap: wrap;
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .nav-right {
+            display: flex;
+            gap: 15px;
+        }
+
+        nav a {
+            color: #111c4e;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 8px 16px;
+            border-radius: 20px;
+            background: transparent;
+            transition: all 0.3s ease;
+            border: 2px solid #111c4e;
+            box-shadow: 0 0 10px rgba(255, 242, 102, 0.3);
+        }
+
+        nav a:hover {
+            background-color: #02075F;
+            color: #F7F7F7;
+            transform: scale(1.1);
+            box-shadow: 0 0 20px #111c4e, 0 0 30px #FFFF6B;
+        }
+
+        .logo {
+            width: 60px;
+            height: auto;
+        }
+
+        .text-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .title {
+            font-size: 38px;
+            font-weight: bold;
+            color: #111c4e;
+        }
+
+        .tagline {
+            font-size: 19px;
+            color: #71323B;
+        }
+
+header {
+    position: fixed;
+    top: 100px;
+    width: 100%;
+    z-index: 999;
+    background-color: #E0F5F5;
+    padding: 10px 40px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+main {
+    margin-top: 120px; /* Adjust to avoid content hiding under header */
+}
+        header h1 {
+            margin: 0;
+            color: #111c4e;
+            font-size: 32px;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 40px auto;
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+        }
+
+        h2 {
+            color: #02075F;
+            margin-top: 30px;
+            font-size: 24px;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        ul {
+            margin-left: 20px;
+            padding-left: 0;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        footer {
+            background-color: #D1DBE6;
+            color: #111c4e;
+            text-align: center;
+            padding: 25px 20px;
+            margin-top: 40px;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-left">
+            <img src="images/logo.png" alt="MatView Logo" class="logo" />
+            <div class="text-group">
+                <div class="title">Mat View</div>
+                <div class="tagline">Innovate & Educate</div>
+            </div>
+        </div>
+        <div class="nav-right">
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="service.html">Service</a>
+            <a href="policy.html">Policy</a>
+        </div>
+    </nav>
+
+ <header>
+    <h1>Refund & Cancellation Policy</h1>
+  </header>
+
+  <main>
+    <p>At MatView, we are committed to providing you with best-in-class quality and support. We understand that sometimes you may need to cancel an order or return a product. Our policies are designed to ensure a smooth and hassle-free process for you.</p>
+
+    <h2>Refund Policy</h2>
+    <p>We offer a straightforward and hassle-free refund process in the event that you receive a wrong, defective, or damaged product.</p>
+
+    <h3>Conditions for Refund</h3>
+    <ul>
+      <li><strong>Eligibility:</strong> Return must be initiated within 7 days from the date of delivery with proof of purchase.</li>
+      <li>The product must be in its original condition with all accessories and packaging intact.</li>
+    </ul>
+
+    <h3>Approval Process</h3>
+    <ul>
+      <li>Returned products will be inspected by our engineers.</li>
+      <li>Refund is issued only after approval by the inspection team.</li>
+    </ul>
+
+    <h3>Return Process</h3>
+    <ul>
+      <li><strong>Initiate Return:</strong> Contact customer support within 7 days and provide order details.</li>
+      <li><strong>Return Shipping:</strong> Instructions will be provided. Return shipping cost may be applicable unless the product was wrong, defective, or damaged.</li>
+      <li><strong>Confirmation:</strong> You'll receive a notification once we receive the returned item.</li>
+    </ul>
+
+    <h3>Refund Process</h3>
+    <ul>
+      <li><strong>Approval Notification:</strong> You'll be informed once the returned product is approved.</li>
+      <li><strong>Processing:</strong> Refund will be processed within 3 working days to the original payment method.</li>
+      <li><strong>Confirmation:</strong> You will receive an email confirmation when the refund is completed.</li>
+    </ul>
+
+    <h3>Important Information</h3>
+    <ul>
+      <li><strong>Non-Refundable Items:</strong> Products damaged due to misuse or missing components are not eligible.</li>
+      <li><strong>Delayed Refunds:</strong> Check with your bank or card provider if you don’t receive the refund on time. Contact support if needed.</li>
+    </ul>
+
+    <h2>Cancellation Policy</h2>
+    <p>We understand that sometimes you may need to cancel your order. Our policy is designed to accommodate your needs efficiently.</p>
+
+    <h3>Conditions for Cancellation</h3>
+    <ul>
+      <li><strong>Before Dispatch:</strong> Orders can be cancelled before dispatch (normally within 1 working day).</li>
+      <li><strong>After Dispatch:</strong> If already shipped, cancellation isn't possible. However, you can request a refund after delivery.</li>
+    </ul>
+
+    <h3>Cancellation Process</h3>
+    <ul>
+      <li><strong>Initiate:</strong> Contact customer support with your order details and cancellation reason.</li>
+      <li><strong>Confirmation:</strong> You’ll receive a confirmation email once the request is processed.</li>
+    </ul>
+
+    <h3>Important Information</h3>
+    <ul>
+      <li><strong>Timing:</strong> Cancellations must be made before dispatch.</li>
+      <li><strong>Refund for Cancellations:</strong> Processed within 3 working days if cancelled in time.</li>
+    </ul>
+
+    <h2>Contact Us</h2>
+    <p>For any questions or concerns regarding refunds or cancellations, please contact us:</p>
+    <ul>
+      <li>Email: <a href="mailto:info@matview.co.in">info@matview.co.in</a></li>
+      <li>Phone: 02975-356173</li>
+    </ul>
+
+    <p>We are here to assist you and ensure your satisfaction. Thank you for choosing MatView!</p>
+  </main>
+
+    <footer>
+        &copy; 2025 MatView Private Limited. All Rights Reserved.
+    </footer>
+
+</body>
+</html>
