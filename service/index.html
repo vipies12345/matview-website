@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Our Services | MatView</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background: #f5f7fa;
+            color: #2c3e50;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 40px;
+            background: #D1DBE6;
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            flex-wrap: wrap;
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .nav-right {
+            display: flex;
+            gap: 15px;
+        }
+
+        nav a {
+            color: #111c4e;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 8px 16px;
+            border-radius: 20px;
+            border: 2px solid #111c4e;
+            background: transparent;
+            box-shadow: 0 0 10px rgba(255, 242, 102, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #02075F;
+            color: #F7F7F7;
+            transform: scale(1.1);
+            box-shadow: 0 0 20px #111c4e, 0 0 30px #FFFF6B;
+        }
+
+        .logo {
+            width: 60px;
+            height: auto;
+        }
+
+        .text-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .title {
+            font-size: 38px;
+            font-weight: bold;
+            color: #111c4e;
+        }
+
+        .tagline {
+            font-size: 19px;
+            color: #71323B;
+        }
+
+        .section {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            margin: 50px auto;
+            max-width: 1000px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+            transition: transform 0.3s ease;
+            padding: 20px;
+        }
+
+        .section img {
+            max-width: 600px;
+            width: 100%;
+            height: auto;
+        }
+
+        .section .text-container {
+            flex: 1;
+        }
+
+        .section .text-container h2 {
+            color: #0056b3;
+        }
+
+        .section .text-container p {
+            line-height: 1.6;
+        }
+
+        button {
+            background-color: #2a4c8f;
+            color: white;
+            padding: 12px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+        }
+
+        button:hover {
+            background-color: #1e3b6e;
+        }
+
+        .service-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-item {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .service-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .service-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            filter: brightness(0.95);
+        }
+
+        .service-caption {
+            padding: 15px;
+            text-align: center;
+            font-size: 1.05em;
+            color: #0056b3;
+        }
+
+        footer {
+            background: #D1DBE6;
+            color: #111c4e;
+            text-align: center;
+            padding: 25px 20px;
+            font-size: 0.9rem;
+            margin-top: 50px;
+        }
+
+        @media (max-width: 768px) {
+            .title { font-size: 28px; }
+            .tagline { font-size: 16px; }
+            .section {
+                flex-direction: column;
+            }
+            .section img {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="nav-left">
+            <img src="../images/logo.png" alt="MatView Logo" class="logo" />
+            <div class="text-group">
+                <div class="title">Mat View</div>
+                <div class="tagline">Innovate & Educate</div>
+            </div>
+        </div>
+   <div class="nav-right">
+        <a href="index.html">Home</a>
+        <a href="products/">Products</a>
+        <a href="about/">About</a>
+        <a href="contact/">Contact</a>
+        <a href="service/">Service</a>
+        <a href="Policy/">Policy</a>
+    </div>
+    </nav>
+
+    <!-- Services Grid -->
+    <section class="service-container">
+        <h2 style="text-align:center; margin-bottom: 30px; color:#0056b3;">Our LabVIEW & MATLAB Services</h2>
+        <div class="service-grid">
+            <div class="service-item"><img src="img1.jpg" alt="Service 1"><div class="service-caption">LabVIEW Training Programs</div></div>
+            <div class="service-item"><img src="img2.jpg" alt="Service 2"><div class="service-caption">Custom Software Development</div></div>
+            <div class="service-item"><img src="img3.png" alt="Service 3"><div class="service-caption">HIL Architecture Design</div></div>
+            <div class="service-item"><img src="img4.jpg" alt="Service 4"><div class="service-caption">Micro-grid Integration</div></div>
+            <div class="service-item"><img src="img5.jpg" alt="Service 5"><div class="service-caption">Consulting & Solution Building</div></div>
+            <div class="service-item"><img src="img6.jpg" alt="Service 6"><div class="service-caption">Interface & Testing Setup</div></div>
+            <div class="service-item"><img src="img7.jpg" alt="Service 7"><div class="service-caption">Innovation for Education & R&D</div></div>
+        </div>
+    </section>
+
+    <!-- AC001 App Section -->
+    <section class="service-container">
+        <h2 style="text-align:center; margin-bottom: 30px; color:#0056b3;">AC001 Charger Web App (Student Version)</h2>
+        <div class="section">
+            <img src="img8.jpg" alt="AC001 App">
+            <div class="text-container">
+                <h2>Launch AC001 Web App</h2>
+                <p>This application simulates a real-time interface for AC001 EV charger testing. Built with WebTech for control and monitoring.</p>
+                <a href="https://matview-2024.github.io/AC001/Web%20Application%20Project/Builds/WebApp_Web%20Server/index.html" target="_blank">
+                    <button>Open AC001 Web App</button>
+                </a>
+            </div>
+        </div>
+    </section>
+       </section>
+
+    <!-- AC001 App Section -->
+    <section class="service-container">
+        <h2 style="text-align:center; margin-bottom: 30px; color:#0056b3;">AC001 Charger Web App (Professional)</h2>
+        <div class="section">
+            <img src="service/img8.jpg" alt="AC001 App">
+            <div class="text-container">
+                <h2>Launch AC001 Web App</h2>
+                <p>This application simulates a real-time interface for AC001 EV charger testing. Built with WebTech for control and monitoring.</p>
+                <a href="http://www.metalfurniture.in/">
+                    <button>Open AC001 Web App</button>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2025 MatView Private Limited. All Rights Reserved.
+    </footer>
+
+</body>
+</html>
+
