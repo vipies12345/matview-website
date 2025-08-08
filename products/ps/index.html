@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CDS System| MatView</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset & basics */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html,body { height: 100%; }
+        body {
+            font-family:font-family:'sans', new times roman;
+            background: #f5f7fa;
+            color: #222;
+            line-height: 1.7;
+            -webkit-font-smoothing:antialiased;
+            -moz-osx-font-smoothing:grayscale;
+        }
+        a { color: inherit; text-decoration: none; }
+
+        /* Navigation (from about.html, refined) */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 40px;
+            background: #D1DBE6;
+            position: sticky;
+            top: 0;
+            z-index: 1200;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            flex-wrap: wrap;
+        }
+
+        .nav-left { display:flex; align-items:center; gap:14px; }
+        .logo { width:70px; height:auto; display:block; }
+        .text-group { display:flex; flex-direction:column; line-height:1; }
+        .title { font-size: 40px; font-weight:bold; color:#111c4e; font-family:'sans', new times roman; }
+        .tagline { font-size:18px; color:#71323B; font-weight:500; }
+
+        .nav-right { display:flex; gap:12px; flex-wrap:wrap; align-items:center; }
+        .nav-right a {
+            color:#002244;
+            font-size:18px;
+            padding:8px 16px;
+            border-radius:9999px;
+            background:transparent;
+            border: 2px solid #002244;
+            transition: transform .18s ease, background .18s ease, color .18s ease;
+        }
+        .nav-right a:hover {
+      background-color: #00ffe1;
+    color: #000;
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #00ffe1, 0 0 30px #00ffe1;
+}
+
+        /* Page container and hero */
+        .container { max-width:1100px; margin:28px auto; padding:0 18px; }
+        .hero {
+            background: linear-gradient(180deg, rgba(0,34,68,0.04), rgba(209,219,230,0.25));
+            border-radius:10px;
+            padding:28px;
+            text-align:center;
+            box-shadow: 0 8px 30px rgba(2,34,68,0.03);
+        }
+        .hero h1 { font-size:1.9rem; color:#002244; margin-bottom:8px; font-family:'sans', new times roman; }
+        .hero p { max-width:950px; margin:0 auto; color:#2b2b2b; font-size:1rem; }
+
+        /* Main content card (white background like original RETMS) */
+        main.content-card {
+            background: #fff;
+            margin-top:18px;
+            border-radius:10px;
+            padding:28px;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.04);
+        }
+
+        h2 { color:#003366; border-bottom:2px solid #e6f0fb; padding-bottom:6px; margin-top:28px; margin-bottom:12px; }
+        h3 { color:#004080; margin-top:20px; margin-bottom:8px; font-size:1.02rem; }
+        p, li { font-size:1rem; color:#333; }
+
+        ul { margin-left:18px; margin-top:8px; }
+        .two-column { display:flex; gap:24px; align-items:flex-start; margin-top:14px; }
+        .two-column .col { flex:1; }
+
+        /* Image block / figure */
+        figure { margin:18px 0; text-align:center; }
+        figure img { max-width:100%; border:3px solid #004080; border-radius:10px; box-shadow: 0 8px 20px rgba(0,0,0,0.08); }
+        figcaption { margin-top:8px; font-weight:600; color:#004080; font-size:0.95rem; }
+
+        /* Compact section cards for specification lists */
+        .specs, .advantages, .features { background: #fbfdff; padding:14px; border-radius:8px; margin-top:12px; border:1px solid #e7f0fb; }
+        .section { margin-top:18px; }
+
+        footer.page-foot {
+            background: #002244;
+            color: #fff;
+            text-align:center;
+            padding:18px 10px;
+            margin-top:20px;
+            border-radius:6px;
+        }
+
+        /* Responsive tweaks */
+        @media (max-width: 900px) {
+            .two-column { flex-direction:column; }
+            .nav-right { gap:8px; }
+            .hero h1 { font-size:1.5rem; }
+        }
+
+        @media (max-width: 520px) {
+            .nav-left .title { font-size:16px; }
+            .nav-right a { padding:7px 10px; font-size:14px; }
+            .hero { padding:18px; }
+            main.content-card { padding:18px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation: copied from about.html and adapted -->
+    <nav aria-label="Primary navigation">
+        <div class="nav-left">
+            <img src="images/logo.png" alt="MatView Logo" class="logo" />
+            <div class="text-group">
+                <div class="title">Mat View</div>
+                <div class="tagline">Innovate &amp; Educate</div>
+            </div>
+        </div>
+        <div class="nav-right" role="navigation" aria-label="Main links">
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="service.html">Service</a>
+            <a href="policy.html">Policy</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Hero area (keeps the RETMS title and intro, now properly structured) -->
+        <section class="hero" aria-labelledby="page-title">
+            <h1 id="page-title">Power Supply</h1>
+
+        </section>
+
+        <!-- Main content area: cleaned, structured and styled -->
+        <main class="content-card" id="content" role="main">
+
+            <section class="section" aria-labelledby="Power Supply">
+                <h2 id="Power Supply:">Power Supply:</h2>
+                <div class="specs">
+                    <ul>
+                        A variable DC power supply is a versatile device used to provide a direct current at various voltage levels to power electronic circuits and devices. This equipment comes with adjustable voltage and current settings, allowing users to precisely control and regulate the output power. It is commonly used in laboratories, workshops, and electronic repair shops for testing and troubleshooting purposes. The variable DC power supply typically consists of a power transformer, rectifier, voltage regulator, and output terminals. It provides a stable and reliable power source, ensuring that the connected electronic components receive the necessary power to function optimally. With its ability to deliver a wide range of voltages, this power supply is an essential tool for professionals working with electrical and electronic equipment.
+
+                    </ul>
+                </div>
+
+
+
+            <section class="section" aria-labelledby="weather-station">
+                <h2 id="Variable DC Power Supply">Variable DC Power Supply</h2>
+
+
+                <div class="two-column">
+                    <figure class="col">
+                        <img src="ps/ps 1.png" alt="Variable DC Power Supply" />
+                        <figcaption>Variable DC Power Supply</figcaption>
+                    </figure>
+
+
+                <p style="margin-top:10px;">
+                    <ul>
+                     <h3>Specifications:</h3>
+                    <p>
+                        <h3>Output</h3>
+                    <strong>DC Voltage Options:</strong>
+
+                        <li>MV-1440-12: 12V</li>
+                        <li>MV-1440-24: 24V</li>
+                        <li>MV-1440-36: 36V</li>
+                        <li>MV-1440-48: 48V</li>
+                        <li>MV-3600-120: 120V</li>
+                          <br>
+                        <strong>Rated Current:</strong>
+                        <li>MV-1440-12: 120A</li>
+                        <li>MV-1440-24: 60A</li>
+                        <li>MV-1440-36: 40A</li>
+                        <li> MV-1440-48: 30A</li>
+                        <li>MV-3600-120: 30A</li>
+                            <br>
+                        <strong>Current Range:</strong>
+                        <li>0 to the rated curren</li>
+                              <br>
+                        <strong>Rated Power:</strong>
+                         <li>MV-1440-12: 1440W</li>
+                         <li>MV-1440-24: 1440W</li>
+                         <li>MV-1440-36: 1440W</li>
+                         <li>MV-1440-48: 1440W</li>
+                         <li>MV-3600-120: 3600W</li>
+                             <br>
+                          <strong>Output Voltage Adjustment Range:</strong>
+                         <li>MV-1600-12: 7.2 ~ 15V</li>
+                         <li>MV-1600-24: 9.6 ~ 30V</li>
+                         <li>MV-1600-36: 14.4 ~ 45V</li>
+                         <li>MV-1600-48: 19.2 ~ 60V</li>
+                         <li>MV-3600-120: 20 ~ 120V</li>
+                             <br>
+                         <strong><i>Input</i></strong>
+                         <li><strong>Line Regulation:</strong>±1.0%</li>
+                         <li><strong>Load Regulation:</strong>±0.5%</li>
+                         <li><strong>Hold Up Time: </strong>16ms / 230VAC at 75% load, 10ms / 230VAC at full load</li>
+                              <br>
+                      <strong>Functions and Features</strong>
+                      <li><strong>Constant Current Level Programming: </strong>Enables precise adjustment of </li>
+                                     the current level from 20% to 100% of the rated current.   </li>
+
+                      <li><strong>Constant Voltage Level Programming:</strong> Allows for the output voltage</li>  to be finely tuned using a LabView-based software application</li>
+
+             </ul>
+
+
+                </p>
+            </section>
+
+            <section class="section" aria-labelledby="central-control">
+                <h2 id="Standard DC and Variable AC Power Supply">Standard DC and Variable AC Power Supply</h2>
+                <p>
+                   These specifications describe a versatile power supply system that includes both fixed DC power supplies (3.3V, 5V, 12V, 48V) and a variable AC voltage supply (0-200V). The system supports precise adjustments in current and voltage, ensuring stable and reliable performance across a range of applications.
+                </p>
+
+                <div class="two-column">
+                    <figure class="col">
+                        <img src="ps/pss 2.png" alt="Standard DC and Variable AC Power Supply" />
+                        <figcaption>Standard DC and Variable AC Power Supply</figcaption>
+                    </figure>
+
+
+                <p style="margin-top:10px;">
+                    <ul>
+                     <h3>Specifications:</h3>
+                    <p>
+                        <h3>Output</h3>
+                    <strong>DC Voltage Options:</strong>
+
+                        <li>MVL-16-3.3: 3.3V</li>
+                        <li>MVL-50-5: 5V</li>
+                        <li>MVLP-120-12: 12V,-12</li>
+                        <li>MVL-1000-48: 48V</li>
+                        <li>MVAC-500-200:200V</li>
+                          <br>
+                        <strong>Rated Current:</strong>
+                        <li>MVL-16-3.3: 5A</li>
+                        <li>MVL-50-5: 10A</li>
+                        <li>MVLP-120-12: 10A</li>
+                        <li>MVL-1000-48: 20A</li>
+                        <li>MVAC-500-200:2.5A</li>
+                            <br>
+                        <strong>Current Range:</strong> <li>0 to the rated current</li>                         <li>MV-1440-12: 1440W</li>
+                         <li>Rated Power:</li>
+                         <li>MVL-16-3.3: 15W</li>
+                         <li>MVL-50-5: 50W</li>
+                         <li>MVLP-120-12: 120W</li>
+                         <li>MVL-1000-48: 1000W</li>
+                         <li>MVAC-500-200:500W</li>
+                             <br>
+                          <strong>Output Voltage Adjustment Range:</strong>
+                         <li>MVAC-500-200: 0 ~ 200V</li>
+                         <strong>MVAC-500-200:</strong> <li>0 ~ 200V</li>
+                         <strong>Load Regulation:</strong> <li>±0.5%</li>
+                             <br>
+                         <strong><i>Input</i></strong>
+                         <li><strong>Voltage Range:</strong>90 ~ 264VAC</li>
+                         <li><strong>Frequency Range:</strong>47 ~ 63Hz</li>
+                         <li><strong>Power Factor: </strong>0.97/230VAC at full load</li>
+                         <li><strong>Efficiency:</strong>89% (typical)</li>
+                         <li><strong>Efficiency:</strong>89% (typical)</li>
+                          <br>
+                      <strong>Functions and Features</strong>
+                      <li><strong>Adjustable AC Voltage: </strong>Allows for the output AC</li> voltage to be finely tuned using a knob.
+
+                      <li><strong>Constant Voltage Level Programming:</strong> DC power sources are </li>maintained at their constant value from zero to the rated current value.
+
+             </ul>
+
+                </p>
+            </section>
+
+            <section class="section" aria-labelledby="load-unit">
+
+
+        </main>
+    </div>
+
+       <footer class="page-foot" role="contentinfo">
+                        &copy; 2025 MatView Private Limited. All rights reserved.
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>RETMS — Renewable Energy Training & Management System | MatView</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset & basics */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html,body { height: 100%; }
+        body {
+            font-family:font-family:'sans', new times roman;
+            background: #f5f7fa;
+            color: #222;
+            line-height: 1.7;
+            -webkit-font-smoothing:antialiased;
+            -moz-osx-font-smoothing:grayscale;
+        }
+        a { color: inherit; text-decoration: none; }
+
+        /* Navigation (from about.html, refined) */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 40px;
+            background: #D1DBE6;
+            position: sticky;
+            top: 0;
+            z-index: 1200;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            flex-wrap: wrap;
+        }
+
+        .nav-left { display:flex; align-items:center; gap:14px; }
+        .logo { width:70px; height:auto; display:block; }
+        .text-group { display:flex; flex-direction:column; line-height:1; }
+        .title { font-size: 40px; font-weight:bold; color:#111c4e; font-family:'sans', new times roman; }
+        .tagline { font-size:18px; color:#71323B; font-weight:500; }
+
+        .nav-right { display:flex; gap:12px; flex-wrap:wrap; align-items:center; }
+        .nav-right a {
+            color:#002244;
+            font-size:18px;
+            padding:8px 16px;
+            border-radius:9999px;
+            background:transparent;
+            border: 2px solid #002244;
+            transition: transform .18s ease, background .18s ease, color .18s ease;
+        }
+        .nav-right a:hover {
+      background-color: #00ffe1;
+    color: #000;
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #00ffe1, 0 0 30px #00ffe1;
+}
+
+        /* Page container and hero */
+        .container { max-width:1100px; margin:28px auto; padding:0 18px; }
+        .hero {
+            background: linear-gradient(180deg, rgba(0,34,68,0.04), rgba(209,219,230,0.25));
+            border-radius:10px;
+            padding:28px;
+            text-align:center;
+            box-shadow: 0 8px 30px rgba(2,34,68,0.03);
+        }
+        .hero h1 { font-size:1.9rem; color:#002244; margin-bottom:8px; font-family:'sans', new times roman; }
+        .hero p { max-width:950px; margin:0 auto; color:#2b2b2b; font-size:1rem; }
+
+        /* Main content card (white background like original RETMS) */
+        main.content-card {
+            background: #fff;
+            margin-top:18px;
+            border-radius:10px;
+            padding:28px;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.04);
+        }
+
+        h2 { color:#003366; border-bottom:2px solid #e6f0fb; padding-bottom:6px; margin-top:28px; margin-bottom:12px; }
+        h3 { color:#004080; margin-top:20px; margin-bottom:8px; font-size:1.02rem; }
+        p, li { font-size:1rem; color:#333; }
+
+        ul { margin-left:18px; margin-top:8px; }
+        .two-column { display:flex; gap:24px; align-items:flex-start; margin-top:14px; }
+        .two-column .col { flex:1; }
+
+        /* Image block / figure */
+        figure { margin:18px 0; text-align:center; }
+        figure img { max-width:100%; border:3px solid #004080; border-radius:10px; box-shadow: 0 8px 20px rgba(0,0,0,0.08); }
+        figcaption { margin-top:8px; font-weight:600; color:#004080; font-size:0.95rem; }
+
+        /* Compact section cards for specification lists */
+        .specs, .advantages, .features { background: #fbfdff; padding:14px; border-radius:8px; margin-top:12px; border:1px solid #e7f0fb; }
+        .section { margin-top:18px; }
+
+        footer.page-foot {
+            background: #002244;
+            color: #fff;
+            text-align:center;
+            padding:18px 10px;
+            margin-top:20px;
+            border-radius:6px;
+        }
+
+        /* Responsive tweaks */
+        @media (max-width: 900px) {
+            .two-column { flex-direction:column; }
+            .nav-right { gap:8px; }
+            .hero h1 { font-size:1.5rem; }
+        }
+
+        @media (max-width: 520px) {
+            .nav-left .title { font-size:16px; }
+            .nav-right a { padding:7px 10px; font-size:14px; }
+            .hero { padding:18px; }
+            main.content-card { padding:18px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation: copied from about.html and adapted -->
+    <nav aria-label="Primary navigation">
+        <div class="nav-left">
+            <img src="images/logo.png" alt="MatView Logo" class="logo" />
+            <div class="text-group">
+                <div class="title">Mat View</div>
+                <div class="tagline">Innovate &amp; Educate</div>
+            </div>
+        </div>
+        <div class="nav-right" role="navigation" aria-label="Main links">
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="service.html">Service</a>
+            <a href="policy.html">Policy</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Hero area (keeps the RETMS title and intro, now properly structured) -->
+        <section class="hero" aria-labelledby="page-title">
+            <h1 id="page-title">Renewable Energy Training &amp; Management System (RETMS)</h1>
+            <p>
+                RETMS demonstrates wind and solar photovoltaic (PV) energy systems in standalone, grid-connected, and hybrid configurations.
+                It is a hands-on training platform that integrates power generation, weather sensing, control, protection and data acquisition to support laboratory experiments and research.
+            </p>
+        </section>
+
+        <!-- Main content area: cleaned, structured and styled -->
+        <main class="content-card" id="content" role="main">
+
+            <section class="section" aria-labelledby="power-generation">
+                <h2 id="power-generation">Power Generation Unit</h2>
+                <p>
+                    The Power Generation Unit contains a wind turbine and a solar PV array which act as the primary renewable energy sources for the RETMS. The unit supports experiments in energy capture, conversion, and integration.
+                </p>
+
+                <div class="two-column">
+                    <figure class="col">
+                        <img src="retms/Fig.1.png" alt="Wind Turbine - RETMS" />
+                        <figcaption>Fig-1: Wind Turbine</figcaption>
+                    </figure>
+
+                    <figure class="col">
+                        <img src="retms/Fig.2.png" alt="Solar PV Array - RETMS" />
+                        <figcaption>Fig-2: Solar PV Array</figcaption>
+                    </figure>
+                </div>
+            </section>
+
+            <section class="section" aria-labelledby="weather-station">
+                <h2 id="weather-station">Weather Station</h2>
+                <p>Real-time weather monitoring provides the RETMS with accurate ambient data. Typical sensors included are:</p>
+                <ul>
+                    <li><strong>Pyranometer</strong> — solar irradiation measurement</li>
+                    <li><strong>Humidity &amp; Temperature Sensor</strong> — ambient conditions</li>
+                    <li><strong>Anemometer</strong> — wind speed and direction</li>
+                </ul>
+
+                <div class="two-column">
+                    <figure class="col">
+                        <img src="retms/Fig.3.png" alt="Pyranometer" />
+                        <figcaption>Fig-3: Pyranometer</figcaption>
+                    </figure>
+                    <figure class="col">
+                        <img src="retms/Fig.4.png" alt="Hygrothermometer" />
+                        <figcaption>Fig-4: Hygrothermometer</figcaption>
+                    </figure>
+                </div>
+
+                <div class="two-column">
+                    <figure class="col">
+                        <img src="retms/Fig.5.png" alt="Anemometer" />
+                        <figcaption>Fig-5: Anemometer</figcaption>
+                    </figure>
+                    <figure class="col">
+                        <img src="retms/Fig.6.png" alt="Weather Station" />
+                        <figcaption>Fig-6: Complete Weather Station</figcaption>
+                    </figure>
+                </div>
+
+                <p style="margin-top:10px;">
+                    The station allows users to set safety thresholds and trigger alarms or protective actions when weather readings go beyond configured limits.
+                </p>
+            </section>
+
+            <section class="section" aria-labelledby="central-control">
+                <h2 id="central-control">Central Control Unit</h2>
+                <p>
+                    The Central Control Unit provides monitoring, switching and automation for standalone, grid-tied and hybrid operation modes. It includes relays, contactors, measurement modules, and an editable software layer for experiment customization.
+                </p>
+
+                <figure>
+                    <img src="retms/Fig.7.png" alt="Central Control Unit" />
+                    <figcaption>Fig-7: Central Control Unit</figcaption>
+                </figure>
+            </section>
+
+            <section class="section" aria-labelledby="load-unit">
+                <h2 id="load-unit">Load Unit</h2>
+
+                <h3>Smart House</h3>
+                <p>Miniature smart home kit with relay-based control, energy monitoring and RS-485 communication for supervised experiments.</p>
+                <figure>
+                    <img src="retms/Fig.8.png" alt="Smart House" />
+                    <figcaption>Fig-8: Smart House</figcaption>
+                </figure>
+
+                <h3>Load Analysis Kit</h3>
+                <p>AC load configurations and EMI filters for power quality studies.</p>
+                <figure>
+                    <img src="retms/Fig.9.png" alt="Load Analysis Kit" />
+                    <figcaption>Fig-9: Load Analysis Kit</figcaption>
+                </figure>
+
+                <h3>Control &amp; Automation</h3>
+                <p>Arduino-based relay switching demonstrations with voltage sensing and automatic control logic.</p>
+                <figure>
+                    <img src="retms/Fig.10.png" alt="Control & Automation Unit" />
+                    <figcaption>Fig-10: Control &amp; Automation Unit</figcaption>
+                </figure>
+            </section>
+
+            <section class="section" aria-labelledby="lab-overview">
+                <h2 id="lab-overview">RETMS Lab Setup Overview</h2>
+                <p>Complete lab installation illustrating the arrangement of renewable sources, control, storage, and user interfaces.</p>
+
+                <figure>
+                    <img src="retms/Fig.11.png" alt="RETMS Lab Setup 1" />
+                    <figcaption>Fig-11: RETMS Lab Overview</figcaption>
+                </figure>
+                <figure>
+                    <img src="retms/Fig.12.png" alt="RETMS Lab Setup 2" />
+                    <figcaption>Fig-12: RETMS Lab Overview</figcaption>
+                </figure>
+            </section>
+
+            <section class="section" aria-labelledby="technical-characteristics">
+                <h2 id="technical-characteristics">Technical Characteristics</h2>
+                <div class="specs">
+                    <ul>
+                        <li><strong>Dual Mode Operation:</strong> Manual and automated modes supported.</li>
+                        <li><strong>Open-Source Software:</strong> Editable GUI and logic for customization.</li>
+                        <li><strong>Versatile Integration:</strong> Solar PV and wind turbine support individually or combined.</li>
+                        <li><strong>Automated Switching:</strong> Relays/contactors for source switching.</li>
+                        <li><strong>Active Measurement:</strong> Real-time voltage, current and power acquisition.</li>
+                        <li><strong>Graphical Interface:</strong> Touchscreen GUI with RS-485 communication.</li>
+                        <li><strong>Grid Compatibility:</strong> Works with actual grids or simulated grid environments.</li>
+                        <li><strong>Expandable &amp; Protected:</strong> Scalable architecture with hardware/software safeguards.</li>
+                        <li><strong>24/7 Datalogging:</strong> Continuous monitoring and storage.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="section" aria-labelledby="advantages">
+                <h2 id="advantages">Technical Advantages</h2>
+                <div class="advantages">
+                    <ul>
+                        <li><strong>Supplementary Supply:</strong> Can act as an auxiliary energy source for institutions.</li>
+                        <li><strong>High Availability:</strong> Designed for continuous operation with reduced downtime.</li>
+                        <li><strong>Low Maintenance:</strong> Engineered for ease of ownership.</li>
+                        <li><strong>Comprehensive Manual:</strong> Includes detailed procedure guides and schematics.</li>
+                        <li><strong>Flexible Specs:</strong> Configurable to specific institutional needs.</li>
+                        <li><strong>Training Support:</strong> On-site demonstration and commissioning support available.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="section" aria-labelledby="experiments">
+                <h2 id="experiments">Experiments &amp; Research Options</h2>
+                <div class="features">
+                    <ul>
+                        <li><strong>Solar PV Studies:</strong> I–V and P–V curve analysis in different operating modes.</li>
+                        <li><strong>Wind Turbine Studies:</strong> Performance evaluation in standalone tests.</li>
+                        <li><strong>Hybrid Integration:</strong> Dynamics of combined solar–wind systems, with and without storage.</li>
+                        <li><strong>Smart Home Monitoring:</strong> Energy use and control experiments.</li>
+                        <li><strong>Remote Control:</strong> RS-485 and GUI-based remote monitoring tests.</li>
+                        <li><strong>Load Switching:</strong> Study automatic switching impacts between sources and loads.</li>
+                        <li><strong>Power Quality:</strong> Linear vs non-linear load behavior and filtering experiments.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="section" aria-labelledby="specifications">
+                <h2 id="specifications">Specifications</h2>
+                <p><strong>Components and sub-components (example configuration):</strong></p>
+
+                <h3>1. Power Generation Unit</h3>
+                <ul>
+                    <li><strong>Solar PV Array:</strong> 2 kW, polycrystalline, 24 V system</li>
+                    <li><strong>Wind Turbine:</strong> 1 kW, 3-blade, 24 V system</li>
+                    <li><strong>Battery Bank:</strong> 24 V, 120 Ah (Lead Acid example)</li>
+                </ul>
+
+                <h3>2. Weather Station</h3>
+                <ul>
+                    <li>Pyranometer, Humidity sensor, Wind speed/direction sensor, Rain gauge, Temperature sensor</li>
+                </ul>
+
+                <h3>3. Power &amp; Control Unit</h3>
+                <ul>
+                    <li>PV charge controller (24 V, 60 A PWM)</li>
+                    <li>Wind AC–DC converter (0–40 A, 1 kW)</li>
+                    <li>PV grid-tied inverter (2 kW MPPT)</li>
+                    <li>PV hybrid inverter (2 kW)</li>
+                </ul>
+
+                <h3>4. Central Control Unit</h3>
+                <ul>
+                    <li>Sections: PV, charge controllers, wind, DC link, battery, inverters, AC mains, AC loads</li>
+                    <li>Switching: Relays &amp; contactors</li>
+                    <li>Measurements: PV voltage/current, inverter power, PCC analyzer, battery monitoring</li>
+                    <li>Communication: RS-485</li>
+                </ul>
+
+                <h3>5. Load Unit</h3>
+                <ul>
+                    <li>Smart house kit, Control &amp; Automation kit, Load analysis kit with EMI/EMC filters</li>
+                </ul>
+
+                <p style="margin-top:12px;">The RETMS offers a flexible and extendable platform tailored for training, experimentation and research in renewable energy.</p>
+            </section>
+
+        </main>
+    </div>
+
+       <footer class="page-foot" role="contentinfo">
+                        &copy; 2025 MatView Private Limited. All rights reserved.
+    </footer>
+
+</body>
+</html>
