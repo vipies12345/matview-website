@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Mat View | Engineering Lab Solutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Times New Roman", Times, serif ;
+            background: #f5f7fa;
+            color: #2c3e50;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 40px;
+            background: #D1DBE6;
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            flex-wrap: wrap;
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .nav-right {
+            display: flex;
+            gap: 15px;
+        }
+
+        nav a {
+            color: #111c4e;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 8px 16px;
+            border-radius: 20px;
+            background: transparent;
+            transition: all 0.3s ease;
+            border: 2px solid #111c4e;
+            box-shadow: 0 0 10px rgba(255, 242, 102, 0.3);
+        }
+
+        nav a:hover {
+            background-color: #02075F;
+            color: #F7F7F7;
+            transform: scale(1.1);
+            box-shadow: 0 0 20px #111c4e, 0 0 30px #FFFF6B;
+        }
+
+        .logo {
+            width: 60px;
+            height: auto;
+        }
+
+        .text-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .title {
+            font-size: 38px;
+            font-weight: bold;
+            color: #111c4e;
+        }
+
+        .tagline {
+            font-size: 19px;
+            color: #71323B;
+        }
+
+        .about-section {
+            max-width: 1100px;
+            margin: 50px auto;
+            padding: 40px;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+        }
+
+        .about-section h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #0056b3;
+        }
+
+        .about-section p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .section {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            margin: 50px auto;
+            max-width: 1000px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .section img {
+            max-width: 300px;
+            width: 100%;
+            height: auto;
+        }
+
+        .text-container {
+            flex: 1;
+            max-width: 600px;
+        }
+
+        .text-container h2 {
+            color: #0056b3;
+            margin-bottom: 10px;
+        }
+
+        .text-container p {
+            font-size: 1.05em;
+            line-height: 1.6;
+        }
+
+        footer {
+            background: #D1DBE6;
+            color: #111c4e;
+            text-align: center;
+            padding: 25px 20px;
+            font-size: 0.9rem;
+            margin-top: 50px;
+        }
+
+        @media (max-width: 768px) {
+            .about-section {
+                padding: 20px;
+                margin: 20px;
+            }
+
+            .about-section h2 {
+                font-size: 2em;
+            }
+
+            .section {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .section img {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-left">
+            <img src="images/logo.png" alt="MatView Logo" class="logo" />
+            <div class="text-group">
+                <div class="title">Mat View</div>
+                <div class="tagline">Innovate & Educate</div>
+            </div>
+        </div>
+   <div class="nav-right">
+        <a href="index.html">Home</a>
+        <a href="products/">Products</a>
+        <a href="about/">About</a>
+        <a href="contact/">Contact</a>
+        <a href="service/">Service</a>
+        <a href="Policy/">Policy</a>
+    </div>
+    </nav>
+
+    <!-- About Us -->
+    <section class="about-section">
+        <h2>Get to Know Us</h2>
+        <p style="white-space: pre-line; text-align: justify;">
+        <strong>MatView Private Limited</strong> is a leading manufacturer of engineering laboratory equipment, specializing in power systems and power electronics hardware-in-the-loop (HIL) technology. With a strong foundation built on innovation and technical expertise, we have emerged as a trusted provider of high-quality products tailored for both academic and research applications.
+
+        Our journey began with a bold vision—to transform engineering education and research by delivering advanced laboratory solutions that address the evolving needs of institutions and industries. Since our inception, we have consistently stayed ahead of technological trends, driving innovation to empower our customers with cutting-edge tools.
+
+        At MatView, we are committed to quality, precision, and customer satisfaction. Our team of experienced engineers and professionals works diligently to design and manufacture robust, high-performance equipment that meets global standards. We invest significantly in research and development to ensure that our offerings remain future-ready and aligned with the demands of modern engineering practices.
+
+        More than just a manufacturer, we consider ourselves a partner in progress. Whether you're a university, a research lab, or an industry expert, MatView is here to support your success with innovative products and dedicated service.
+
+        <strong>Join us</strong> in shaping the future of engineering education and research. Choose MatView for quality, innovation, and excellence.
+        </p>
+    </section>
+
+    <!-- Mission -->
+    <div class="section">
+        <img src="img2.png" alt="Our Mission" />
+        <div class="text-container">
+            <h2>Our Mission</h2>
+            <p style="white-space: pre-line; text-align: justify;">
+            To empower the next generation of engineers and researchers in the field of power systems and electronics by providing cutting-edge laboratory equipment and comprehensive training solutions. Through innovation, quality, and dedication, we strive to enhance learning experiences and foster excellence in education and research globally.
+            </p>
+        </div>
+    </div>
+
+    <!-- Vision -->
+<div class="section">
+    <img src="img1.png" alt="Our Vision" />
+    <div class="text-container">
+        <h2>Our Vision</h2>
+        <p style="white-space: pre-line; text-align: justify;">
+            Our vision is to be a leading provider of advanced laboratory equipment and educational solutions in the field of power system and power electronics engineering. We aim to inspire curiosity, creativity, and excellence in students, researchers, and professionals worldwide, contributing to advancements in technology and sustainable energy practices. By continuously evolving our products and services, we seek to shape the future of education and research in power engineering, driving positive change and innovation in the industry.
+        </p>
+    </div>
+</div>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2025 MatView Private Limited. All Rights Reserved.
+    </footer>
+
+</body>
+</html>
