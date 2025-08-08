@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <title>Mat View | Engineering Lab Solutions</title>
+    <title>Mat View | Jhakass Version</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
     <style>
         * {
@@ -11,11 +11,10 @@
             box-sizing: border-box;
         }
 
-        body {
-            font-family: 'sans', Times New Roman;
+      body {
+            font-family: "Times New Roman", Times, serif ;
             background: #f5f7fa;
             color: #2c3e50;
-        }
 
         nav {
             display: flex;
@@ -30,22 +29,21 @@
             flex-wrap: wrap;
         }
 
-        .nav-left {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
 
-        .nav-right {
-            display: flex;
-            gap: 15px;
-        }
-
+.nav-right {
+    display: flex;
+    gap: 20px;
+}
         nav a {
             color: #111c4e;
             text-decoration: none;
-            font-size: 20px;
-            padding: 8px 18px;
+            font-size: 18px;
+            padding: 8px 16px;
             border-radius: 20px;
             background: transparent;
             transition: all 0.3s ease;
@@ -53,150 +51,279 @@
             box-shadow: 0 0 10px rgba(255, 242, 102, 0.3);
         }
 
-        nav a:hover {
-            background-color: #02075F;
-                color: #F7F7F7;
-               transform: scale(1.1);
-               box-shadow: 0 0 20px #111c4e, 0 0 30px #FFFF6B;
+ nav a:hover {
+    background-color: #00ffe1;
+    color: #000;
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #00ffe1, 0 0 30px #00ffe1;
+}
+
+        .header {
+            display: flex;
+            align-items: center;
+            padding: 40px;
         }
 
-        .logo {
-            width: 60px;
-            height: auto;
-        }
+.logo {
+    width: 70px;
+    height: auto;
+}
 
         .text-group {
-            display: flex;
-            flex-direction: column;
+            position: relative;
         }
 
         .title {
-            font-family: Times New Roman;
-            font-size: 42px;
-            font-weight: bold;
+            font-family: 'sans', new times roman;
+            font-size: 40px;
             color: #111c4e;
+            font-weight: bold;
+            text-shadow: 0 0 15px #00ffe1;
         }
 
         .tagline {
             font-size: 18px;
             color: #71323B;
+            margin-top: 5px;
+            text-shadow: 0 0 10px #000000;
         }
 
         .section {
             display: flex;
             align-items: center;
             gap: 40px;
-            margin: 40px auto;
+            margin: 50px auto;
             max-width: 1000px;
-            background: #ffffff;
-            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .section:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 40px rgba(0, 255, 255, 0.4);
         }
 
         .section img {
             width: 50%;
-            object-fit: cover;
+            border-radius: 0;
         }
 
         .text-container {
             padding: 20px;
             width: 50%;
+            color: #fff;
         }
 
-        .text-container h2,
-        .text-container h3 {
-            color: #1abc9c;
+        .text-container h2, .text-container h3 {
+            color: #001BA3;
             margin-bottom: 10px;
+            text-shadow: 0 0 10px #00ffe1;
         }
 
         footer {
-            background: #D1DBE6;
-            color: #111c4e;
+            background: #000;
             text-align: center;
-            padding: 25px 20px;
+            padding: 30px 20px;
+            color: #aaa;
             font-size: 0.9rem;
             margin-top: 50px;
+            border-top: 1px solid #222;
         }
 
-        @media (max-width: 768px) {
-            .section {
-                flex-direction: column;
+        /* Glow animation */
+        @keyframes glow {
+            0% {
+                text-shadow: 0 0 5px #00ffe1, 0 0 10px #00ffe1;
             }
-
-            .section img,
-            .text-container {
-                width: 100%;
+            50% {
+                text-shadow: 0 0 15px #00ffe1, 0 0 30px #00ffe1;
             }
-
-            nav {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .nav-right {
-                flex-direction: column;
-                width: 100%;
+            100% {
+                text-shadow: 0 0 5px #00ffe1, 0 0 10px #00ffe1;
             }
         }
 
+        .title {
+            animation: glow 3s infinite ease-in-out;
+        }
     </style>
 </head>
 <body>
 
-    <nav>
-        <div class="nav-left">
-            <img src="images/logo.png" alt="Logo" class="logo" />
-            <div class="text-group">
-                <div class="title">Mat View</div>
-                <div class="tagline">Innovate & Educate</div>
-            </div>
-        </div>
-   <div class="nav-right">
-        <a href="index.html">Home</a>
-        <a href="products/">Products</a>
-        <a href="about/">About</a>
-        <a href="contact/">Contact</a>
-        <a href="service/">Service</a>
-        <a href="Policy/">Policy</a>
-    </div>
-    </nav>
-
-    <div class="section">
-        <img src="images/img1.jpg" alt="Welcome" />
-        <div class="text-container">
-            <h2>Welcome</h2>
-            <p style="white-space: pre-line; text-align: justify;">
-            Welcome to MatView, a leading manufacturer of engineering lab equipment.We develop innovative microgrid and electric vehicle research tools including Matlab and LabVIEW-based hardware-in-loop systems for academic and industrial use.</p>
+<nav>
+    <div class="nav-left">
+        <img src="images/logo.png" alt="Logo" class="logo" />
+        <div class="text-group">
+            <div class="title">Mat View</div>
+            <div class="tagline">Innovate & Educate</div>
         </div>
     </div>
+    <div class="nav-right">
+        <a href="home.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="Service.html">Service</a>
+        <a href="Policy.html">Policy</a>
+    </div>
+</nav>
+
+
 
     <div class="section">
-        <img src="images/img2.jpg" alt="Education" />
+        <img src="pd/Wind Turbine Emulator Research System.png" alt="Wind Turbine Emulator Research System" />
         <div class="text-container">
-            <h3>Education & Research</h3>
-            <p style="white-space: pre-line; text-align: justify;">
-            Explore our advanced solutions tailored for universities, technical institutes, and R&D labs involved in smart grid and e-mobility projects.</p>
+            <h2>Wind Turbine Emulator Research System</h2>
+            <p style="white-space: pre-line; text-align: justify;color:#0056b3;">
+            Our wind turbine emulator is a cutting-edge solution that accurately simulates the behavior of wind turbines for hardware-level simulations. By utilizing a sophisticated system with a dc motor coupled with an induction generator or permanent magnet synchronous generator, we are able to control the speed of the generator based on the speed reference calculated by solving the mathematical model of the wind turbine. With precise specifications and advanced technology, our wind turbine emulator is the ideal choice for your simulation needs.</p>
+           <br>
+              <h4><a href="index.html"><p style="color:#001475"> Learn More </p> </a></h4> </br>
+
         </div>
     </div>
 
     <div class="section">
-        <img src="images/img3.png" alt="Matlab" />
+        <img src="pd/rlc.png" alt="RLC Load" />
         <div class="text-container">
-            <h3>Matlab-based Ecosystems</h3>
-            <p style="white-space: pre-line; text-align: justify;">
-            We offer Matlab-compatible hardware solutions, enabling seamless simulation and testing of power systems, control algorithms, and electric vehicle models.</p>
+            <h2>RLC Load System</h2>
+             <p style="white-space: pre-line; text-align: justify;color:#0056b3;">
+            MatView AC load bank testing offers you whole solutions of predictive failure analysis for UPS (uninterrupted power supply), generators, transformers, PV system, inverter etc, to validate the condition and output of such power systems comprehensively..</p>
+         <br>
+            <h4><a href="index.html"><p style="color:#001475"> Learn More </p> </a></h4> </br>
         </div>
     </div>
 
     <div class="section">
-        <img src="images/img4.png" alt="LabVIEW" />
+        <img src="pd/bds.png" alt="Battery Charger Discharger" />
         <div class="text-container">
-            <h3>LabVIEW Integration</h3>
-            <p style="white-space: pre-line; text-align: justify;">
-            Our LabVIEW-based platforms provide real-time experimentation, data acquisition, and control for academic and industrial automation projects.</p>
+            <h3>Battery Charger‑Discharger (CDS)</h3>
+              <p style="white-space: pre-line; text-align: justify;color:#0056b3;">
+            The Battery Charger-Discharger System is designed for efficient charging and discharging of batteries, featuring advanced control and monitoring capabilities.</p>
+          <br>
+             <h4><a href="index.html"><p style="color:#001475"> Learn More </p> </a></h4> </br>
+     </div>
+    </div>
+
+    <div class="section">
+        <img src="pd/retms.png" alt="RETMS" />
+        <div class="text-container">
+            <h3>RETMS – Renewable Energy Training & Management System</h3>
+               <p style="white-space: pre-line; text-align: justify;color:#0056b3;">
+            The Renewable Energy Training and Management System (RETMS) integrates two primary renewable energy sources—solar photovoltaic (PV) and wind energy—offering an advanced platform for learning and managing renewable electricity production. This system is designed to be both educational and functional, allowing users to explore different configurations and operational modes of renewable energy systems. The RETMS features several technical and operational characteristics that make it a comprehensive tool for training and research.</p>
+         <br>
+            <h4><a href="index.html"><p style="color:#001475"> Learn More </p> </a></h4> </br>
+
         </div>
     </div>
+
+    <div class="section">
+        <img src="pd/ps.png" alt="DC/AC Power Supply" />
+        <div class="text-container">
+            <h3>DC Power Supply</h3>
+              <p style="white-space: pre-line; text-align: justify;color:#0056b3;">
+            A variable DC power supply is a versatile device used to provide a direct current at various voltage levels to power electronic circuits and devices. This equipment comes with adjustable voltage and current settings, allowing users to precisely control and regulate the output power. It is commonly used in laboratories, workshops, and electronic repair shops for testing and troubleshooting purposes. The variable DC power supply typically consists of a power transformer, rectifier, voltage regulator, and output terminals. It provides a stable and reliable power source, ensuring that the connected electronic components receive the necessary power to function optimally. With its ability to deliver a wide range of voltages, this power supply is an essential tool for professionals working with electrical and electronic equipment.</p>
+         <br>
+            <h4><a href="index.html"><p style="color:#001475"> Learn More </p> </a></h4> </br>
+
+        </div>
+        </div>
+
+              <div class="section">
+        <img src="pd/sc.png" alt="Super Capacitor Training System" />
+        <div class="text-container">
+            <h3>Super Capacitor Training System</h3>
+            <p  style="white-space: pre-line; text-align: justify;color:#0056b3;">
+            The Supercapacitor Training System is an advanced educational platform designed to demonstrate the charging and discharging characteristics of supercapacitors (SCs). This system includes a supercapacitor module and an SC charger/discharger to analyze energy storage behavior, charge/discharge time, and power density. It also illustrates the practical applications of supercapacitors in electric vehicles (EVs) and EV charging stations, providing hands-on insights into their role in rapid energy transfer and sustainable energy solutions. Ideal for research, training, and industrial learning, this system bridges the gap between theoretical concepts and real-world implementation.</p>
+          <br>
+             <h4><a href="index.html"><p style="color:#001475"> Learn More </p> </a></h4> </br>
+
+        </div>
+        </div>
+
+       <div class="section">
+        <img src="pd/AC-DC Fast Charger.png" alt="AC-DC Fast Charger" />
+        <div class="text-container">
+            <h3>DC Fast Charger</h3>
+            <p  style="white-space: pre-line; text-align: justify;color:#0056b3;">
+            We specialize in fast charging solutions for electric vehicles, enabling a quick charge up to 80% in just 1 hour for a 96v, 100ah battery. We also provide customized chargers up to 400 Amps.</p>
+           <br>
+              <h4><a href="index.html"><p style="color:#001475"> Learn More </p> </a></h4> </br>
+
+        </div>
+        </div>
+
+        <div class="section">
+        <img src="pd/Wind Turbine Training System.png" alt=""Wind Turbine Training System" />
+        <div class="text-container">
+            <h3>"Wind Turbine Training System</h3>
+            <p style="white-space: pre-line; text-align: justify;color:#0056b3;">
+            Wind Energy Training Systems are valuable tools for educators, students, researchers, and professionals working in the renewable energy sector. They provide a safe and accessible way to learn about wind energy technology, promote innovation, and contribute to the growth of this important industry.</p>
+          <br>
+             <h4><a href="index.html"><p style="color:#001475"> Learn More </p> </a></h4> </br>
+
+        </div>
+        </div>
+
+         <div class="section">
+        <img src="pd/Solar Energy training System.png" alt=""Solar Energy training System" />
+        <div class="text-container">
+            <h3>"Solar Energy training System</h3>
+            <p  style="white-space: pre-line; text-align: justify;color:#0056b3;">
+            Solar Energy Training System is educational tools designed to teach individuals and professionals about photovoltaic (PV) technology, the process of converting sunlight into electricity. These systems simulate real-world solar energy generation and provide hands-on experience with various components and configurations.</p>
+           <br>
+              <h4><a href="index.html"><p style="color:#001475"> Learn More </p> </a></h4> </br>
+
+        </div>
+        </div>
+
+           <div class="section">
+           <img src="pd/Electric Vehicle Research System.png" alt=""Electric Vehicle Research System." />
+           <div class="text-container">
+              <h3>"Electric Vehicle Research System</h3>
+                <p style="white-space: pre-line; text-align: justify;color:#0056b3;">
+              Electric Vehicle Research System (EVRS) is an educational instrument designed to teach individuals and professionals about Electric Vehicle (EV), Battery and Charger technology. This system replicates real-electric vehicles and provides hands-on experience with various components and configurations.</p>
+               <br>
+                 <h4><a href="index.html"><p style="color:#001475"> Learn More </p> </a></h4> </br>
+        </div>
+        </div>
+
+           <div class="section">
+           <img src="pd/Solar Array Simulator based Grid tied System.png" alt=""Solar Array Simulator based Grid tied System." />
+           <div class="text-container">
+              <h3>"Solar Array Simulator based Grid tied System</h3>
+               <p style="white-space: pre-line; text-align: justify;color:#0056b3;">
+              Solar array simulation software, when used with a high-performance DC power supply, can accurately simulate the I-V curve of solar arrays. This system features precise measurements, high stability, and fast response times. With built-in parameters like Vmp (Voltage at Maximum Power) and Pmp (Power at Maximum Power), it can effectively generate the I-V curve output and produce reports. These capabilities greatly assist in testing both the static and dynamic maximum power tracking performance of photovoltaic inverters.</p>
+             <br>
+                <h4><a href="index.html"><p style="color:#001475"> Learn More </p> </a></h4> </br>
+        </div>
+        </div>
+
+        <div class="section">
+           <img src="pd/SAS.png" alt=""Solar Array Simulator." />
+           <div class="text-container">
+              <h3>"Solar Array Simulator</h3>
+                <p style="white-space: pre-line; text-align: justify;color:#0056b3;">
+              Solar array simulation software, when used with a high-performance DC power supply, can accurately simulate the I-V curve of solar arrays. This system features precise measurements, high stability, and fast response times. With built-in parameters like Vmp (Voltage at Maximum Power) and Pmp (Power at Maximum Power), it can effectively generate the I-V curve output and produce reports. These capabilities greatly assist in testing both the static and dynamic maximum power tracking performance of photovoltaic inverters.</p>
+             <br>
+                <h4><a href="index.html"><p style="color:#001475"> Learn More </p> </a></h4> </br>
+          </div>
+        </div>
+
+        <div class="section">
+           <img src="pd/Fuel cell based EV Emulator.png" alt=""Fuel cell based EV Emulator." />
+           <div class="text-container">
+              <h3>"Fuel cell based EV Emulator</h3>
+                <p style="white-space: pre-line; text-align: justify;color:#0056b3;">
+              PEM fuel cells provide a sustainable alternative to lithium-ion batteries in EVs by generating electricity through a hydrogen-oxygen reaction, emitting only water and heat. Unlike batteries, they offer continuous energy as long as fuel is available. However, their slow dynamic response necessitates a supercapacitor for instant power delivery, enhancing system efficiency, responsiveness, and longevity.</p>
+              <br>
+                  <h4><a href="index.html"><p style="color:#001475"> Learn More </p> </a></h4> </br>
+          </div>
+        </div>
+
 
     <footer>
         &copy; 2025 MatView Private Limited. All Rights Reserved.
@@ -204,4 +331,3 @@
 
 </body>
 </html>
-
