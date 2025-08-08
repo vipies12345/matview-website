@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Mat View | Engineering Lab Solutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: "Times New Roman", Times, serif;
+            background: #f5f7fa;
+            color: #2c3e50;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 40px;
+            background: #D1DBE6;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            flex-wrap: wrap;
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .nav-right {
+            display: flex;
+            gap: 15px;
+        }
+
+        nav a {
+            color: #111c4e;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 8px 16px;
+            border-radius: 20px;
+            background: transparent;
+            transition: all 0.3s ease;
+            border: 2px solid #111c4e;
+        }
+
+        nav a:hover {
+            background-color: #02075F;
+            color: #F7F7F7;
+            transform: scale(1.1);
+        }
+
+        .logo {
+            width: 60px;
+            height: auto;
+        }
+
+        .text-group .title {
+            font-size: 38px;
+            font-weight: bold;
+            color: #111c4e;
+        }
+
+        .tagline {
+            font-size: 19px;
+            color: #71323B;
+        }
+
+        .image-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            padding: 40px;
+        }
+
+        .policy-item {
+            text-align: center;
+            width: 250px;
+        }
+
+        .policy-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .policy-item img:hover {
+            transform: scale(1.05);
+        }
+
+        .policy-item h3 {
+            margin: 15px 0 10px;
+            font-size: 20px;
+            color: #111c4e;
+        }
+
+        footer {
+            background: #D1DBE6;
+            color: #111c4e;
+            text-align: center;
+            padding: 25px 20px;
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-left">
+            <img src="images/logo.png" alt="Logo" class="logo" />
+            <div class="text-group">
+                <div class="title">Mat View</div>
+                <div class="tagline">Innovate & Educate</div>
+            </div>
+        </div>
+        <div class="nav-right">
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="service.html">Service</a>
+            <a href="policy.html">Policy</a>
+        </div>
+    </nav>
+
+    <!-- Policy Section -->
+    <div class="image-grid">
+        <div class="policy-item">
+            <h3>Privacy Policy</h3>
+            <a href="privacy.html">
+                <img src="policy/privacy.png" alt="Privacy Policy">
+            </a>
+        </div>
+
+        <div class="policy-item">
+            <h3>Shipping Policy</h3>
+            <a href="shipping.html">
+                <img src="policy/shipping.png" alt="Shipping Policy">
+            </a>
+        </div>
+
+        <div class="policy-item">
+            <h3>Terms and Conditions</h3>
+            <a href="terms.html">
+                <img src="policy/t&c.png" alt="Terms and Conditions">
+            </a>
+        </div>
+
+        <div class="policy-item">
+            <h3>Refund & Cancellation</h3>
+            <a href="refund.html">
+                <img src="policy/r&c.png" alt="Refund and Cancellation">
+            </a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2025 MatView Private Limited. All Rights Reserved.
+    </footer>
+
+</body>
+</html>
