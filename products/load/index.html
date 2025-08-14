@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>RLC Load| MatView</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset & basics */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html,body { height: 100%; }
+        body {
+            font-family:font-family:'sans', new times roman;
+            background: #f5f7fa;
+            color: #222;
+            line-height: 1.7;
+            -webkit-font-smoothing:antialiased;
+            -moz-osx-font-smoothing:grayscale;
+        }
+        a { color: inherit; text-decoration: none; }
+
+        /* Navigation (from about.html, refined) */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 40px;
+            background: #D1DBE6;
+            position: sticky;
+            top: 0;
+            z-index: 1200;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            flex-wrap: wrap;
+        }
+
+        .nav-left { display:flex; align-items:center; gap:14px; }
+        .logo { width:70px; height:auto; display:block; }
+        .text-group { display:flex; flex-direction:column; line-height:1; }
+        .title { font-size: 40px; font-weight:bold; color:#111c4e; font-family:'sans', new times roman; }
+        .tagline { font-size:18px; color:#71323B; font-weight:500; }
+
+        .nav-right { display:flex; gap:12px; flex-wrap:wrap; align-items:center; }
+        .nav-right a {
+            color:#002244;
+            font-size:18px;
+            padding:8px 16px;
+            border-radius:9999px;
+            background:transparent;
+            border: 2px solid #002244;
+            transition: transform .18s ease, background .18s ease, color .18s ease;
+        }
+        .nav-right a:hover {
+      background-color: #00ffe1;
+    color: #000;
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #00ffe1, 0 0 30px #00ffe1;
+}
+
+        /* Page container and hero */
+        .container { max-width:1100px; margin:28px auto; padding:0 18px; }
+        .hero {
+            background: linear-gradient(180deg, rgba(0,34,68,0.04), rgba(209,219,230,0.25));
+            border-radius:10px;
+            padding:28px;
+            text-align:center;
+            box-shadow: 0 8px 30px rgba(2,34,68,0.03);
+        }
+        .hero h1 { font-size:1.9rem; color:#002244; margin-bottom:8px; font-family:'sans', new times roman; }
+        .hero p { max-width:950px; margin:0 auto; color:#2b2b2b; font-size:1rem; }
+
+        /* Main content card (white background like original RETMS) */
+        main.content-card {
+            background: #fff;
+            margin-top:18px;
+            border-radius:10px;
+            padding:28px;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.04);
+        }
+
+        h2 { color:#003366; border-bottom:2px solid #e6f0fb; padding-bottom:6px; margin-top:28px; margin-bottom:12px; }
+        h3 { color:#004080; margin-top:20px; margin-bottom:8px; font-size:1.02rem; }
+        p, li { font-size:1rem; color:#333; }
+
+        ul { margin-left:18px; margin-top:8px; }
+        .two-column { display:flex; gap:24px; align-items:flex-start; margin-top:14px; }
+        .two-column .col { flex:1; }
+
+        /* Image block / figure */
+        figure { margin:18px 0; text-align:center; }
+        figure img { max-width:100%; border:3px solid #004080; border-radius:10px; box-shadow: 0 8px 20px rgba(0,0,0,0.08); }
+        figcaption { margin-top:8px; font-weight:600; color:#004080; font-size:0.95rem; }
+
+        /* Compact section cards for specification lists */
+        .specs, .advantages, .features { background: #fbfdff; padding:14px; border-radius:8px; margin-top:12px; border:1px solid #e7f0fb; }
+        .section { margin-top:18px; }
+
+        footer.page-foot {
+            background: #002244;
+            color: #fff;
+            text-align:center;
+            padding:18px 10px;
+            margin-top:20px;
+            border-radius:6px;
+        }
+
+        /* Responsive tweaks */
+        @media (max-width: 900px) {
+            .two-column { flex-direction:column; }
+            .nav-right { gap:8px; }
+            .hero h1 { font-size:1.5rem; }
+        }
+
+        @media (max-width: 520px) {
+            .nav-left .title { font-size:16px; }
+            .nav-right a { padding:7px 10px; font-size:14px; }
+            .hero { padding:18px; }
+            main.content-card { padding:18px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation: copied from about.html and adapted -->
+    <nav aria-label="Primary navigation">
+        <div class="nav-left">
+            <img src="logo.png" alt="MatView Logo" class="logo" />
+            <div class="text-group">
+                <div class="title">Mat View</div>
+                <div class="tagline">Innovate &amp; Educate</div>
+            </div>
+        </div>
+        <div class="nav-right" role="navigation" aria-label="Main links">
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="service.html">Service</a>
+            <a href="policy.html">Policy</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Hero area (keeps the RETMS title and intro, now properly structured) -->
+        <section class="hero" aria-labelledby="page-title">
+            <h1 id="page-title">RLC Load</h1>
+
+        </section>
+
+        <!-- Main content area: cleaned, structured and styled -->
+        <main class="content-card" id="content" role="main">
+
+            <section class="section" aria-labelledby="RLC Load">
+                <h2 id="RLC Load:">RLC Load:</h2>
+                <div class="specs">
+                    <ul>
+                        MatView AC load bank testing offers you whole solutions of predictive failure analysis for UPS (uninterrupted power supply), generators, transformers, PV system, inverter etc, to validate the condition and output of such power systems comprehensively.
+                    </ul>
+                </div>
+
+               <section class="section" aria-labelledby="RLC Load">
+                <h2 id="RLC Load:">Why we need load bank testing?</h2>
+                <div class="specs">
+                    <ul>
+                       It is really critical that your standby power system say UPS (uninterrupted power supply), battery bank, generator, transformers, inverter, etc working in good condition if switched to be loaded when the main power supply in maintenance procedure or stops abnormally. Downtime could be reduced by regular maintenance and thorough inspections which are the key to the power supply system’s maintenance.
+                    <br>
+                       <br>
+                    Critical power backup equipment like UPS systems and generators which are especially located in harsh, dusty, or corrosive environments will fail without proper preventative maintenance. MatView provides a whole range of custom preventative maintenance product solutions for UPS systems and generators and many more to ensure constant uptime for your power systems and make you prepared for anything.
+
+                       Load banks help highlight a large range of faults on the equipment it tests. The first objective when testing with an electric bank is to ensure your equipment’s power supply is reliable. The underlying question that needs answering is whether your equipment will have sufficient power supply to ensure uninterrupted operational performance. The load bank also tests that the equipment is not faulty, that there are no faults in construction, that the aging of the equipment is in line with expectations, that the components are reliable, and that there are no pending breakdowns or early signs of wear and tear. The load bank also ensures that the product delivers power conforms to its specifications.
+                      <br>
+                          <br>
+                       Resistive & reactive load banks are able to mimic motor loads and electromagnetic devices within a power system as well as purely resistive loads by offering the ability to set a specific power factor (pf). Many backup generators and turbines are rated at 0.7, 0.8 or 0.85 power factor and need to be commissioned at nameplate capacity using a combination of resistive and reactive load to fully qualify their operating capability. Using a resistive & reactive load bank enables comprehensive testing from a single unit. MatView has an extensive range of resistive & reactive load banks to simulate these types of loads on a power source and the transformers, relays, and switches that will distribute the power throughout your facility.
+                      <br>
+                            <br>
+                       Inductive & capacitive load banks are reactive only and must be used in combination with a resistive load bank to provide the desired load profile to test a power system. Reactive loads banks can provide either a leading power factor (Capacitive) or a lagging power factor (Inductive).
+
+                       MatView series AC load bank testing offers you whole solutions of predictive failure analysis for UPS (uninterrupted power supply), generators, transformers, PV system, inverter etc, to validate the condition and output of such power systems comprehensively.
+
+
+                    </ul>
+                </div>
+
+
+          <section class="section" aria-labelledby="RLC Load">
+               <div class="specs">
+                    <ul>
+           <h2 id="RLC Load:">Manual Control RLC Load:</h2>
+
+<div style="display: flex; align-items: flex-start; font-family: Arial, sans-serif; max-width: 1000px;">
+
+    <!-- Left Side: Technical Specs -->
+    <div style="flex: 1; padding-right: 20px;">
+        <h3 style="border-bottom: 2px solid #333; padding-bottom: 5px;">Technical Specifications</h3>
+        <table style="width: 100%; border-collapse: collapse; line-height: 1.6;">
+            <tr><td><strong>Model</strong></td><td><strong>: </strong>MatView-AC415V-7.07kVA-RLC AC Load Bank-M7070</td></tr>
+            <tr><td><strong>Load Element</strong></td><td><strong>: </strong>Resistor, inductor and capacitor</td></tr>
+            <tr><td><strong>Load Voltage</strong></td><td><strong>: </strong>AC-415V three phase four wire</td></tr>
+            <tr><td><strong>Frequency</strong></td><td><strong>: </strong>50Hz</td></tr>
+            <tr><td><strong>3 Phase Load Power</strong></td><td><strong>: </strong>R=5kW, L=5KVar, C=5KVar</td></tr>
+            <tr>
+                <td><strong>Load /phase</strong></td>
+                <td><strong>: </strong>
+                    - Resistive load steps: 10W(min) - 500W(max)<br>
+                    - Inductive load steps: 10Var(min) - 500Var(max)<br>
+                    - Capacitive load steps: 10Var(min) - 500Var(max)
+                </td>
+            </tr>
+            <tr><td><strong>Power Factor</strong></td><td><strong>: </strong>Leading and lagging power factor 0-1.0 adjustable</td></tr>
+            <tr><td><strong>Digital Meter</strong></td><td><strong>: </strong>Voltage, current, active power, reactive power, apparent power, power factor, energy, frequency</td></tr>
+            <tr><td><strong>Auxiliary Supply</strong></td><td><strong>: </strong>230V 50Hz, single phase</td></tr>
+            <tr><td><strong>Control Modes</strong></td><td><strong>: </strong>Local control panels by push buttons</td></tr>
+            <tr><td><strong>Insulation Class</strong></td><td><strong>: </strong>F</td></tr>
+            <tr><td><strong>Cooling Mode</strong></td><td><strong>: </strong>Force-air vertical cooling, by axial-flow fans</td></tr>
+            <tr><td><strong>Work Mode</strong></td><td><strong>: </strong>Continuous work</td></tr>
+            <tr><td><strong>Protections</strong></td><td><strong>: </strong>Overheating/Buzzer alarm, Overheating/Over current, over voltage, over load protection, emergency stop button</td></tr>
+            <tr><td><strong>Ambient Temperature</strong></td><td><strong>: </strong>-10°C ~ +50°C</td></tr>
+            <tr><td><strong>Mobility</strong></td><td><strong>: </strong>Four wheels</td></tr>
+            <tr><td><strong>Humidity</strong></td><td><strong>: </strong>≤95%</td></tr>
+        </table>
+    </div>
+
+    <!-- Right Side: Image with Transparency -->
+    <div style="flex: 0 0 300px; text-align: center;">
+        <br> <br><br>
+        <img src="rlc1.png" alt="Load Bank Image" style="width: 100%; opacity: 0.;border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.1);">
+        <p style="font-size: 14px; color: #000000;">Figure 1. Manual Control RLC load Bank </p>
+    </div>
+
+            </ul>
+           </div>
+
+
+
+  <section class="section" aria-labelledby="RLC Load">
+               <div class="specs">
+                    <ul>
+
+
+    <!-- Right Side: Image with Transparency -->
+    <div style="flex: 0 0 300px; text-align: center;">
+        <br> <br><br>
+        <img src="rlc2.png" alt="Load Bank Image" style="height: 30%; opacity: 0.;border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.1);">
+        <p style="font-size: 14px; color: #141414;">Figure 2. RLC Load LabView GUI </p>
+    </div>
+
+            </ul>
+      </div>
+
+
+
+
+
+
+  <section class="section" aria-labelledby="RLC Load">
+               <div class="specs">
+                    <ul>
+           <h2 id="RLC Load:">Constant Power Control RLC Load:</h2>
+
+<div style="display: flex; align-items: flex-start; font-family: Arial, sans-serif; max-width: 1000px;">
+
+    <!-- Left Side: Technical Specs -->
+    <div style="flex: 1; padding-right: 20px;">
+        <h3 style="border-bottom: 2px solid #333; padding-bottom: 5px;">Technical Specifications</h3>
+        <table style="width: 100%; border-collapse: collapse; line-height: 1.6;">
+            <tr><td><strong>Model</strong></td><td><strong>: </strong>MatView-AC415V-7.07kVA-RLC AC Load Bank-A7070</td></tr>
+            <tr><td><strong>Load Element</strong></td><td><strong>: </strong> Resistor, inductor and capacitor</td></tr>
+            <tr><td><strong>Load Voltage:</strong></td><td><strong>: </strong>AC-415V three phase four wire</td></tr>
+            <tr><td><strong>Frequency   :</strong></td><td><strong>: </strong>50Hz</td></tr>
+            <tr><td><strong>3 Phase Load Power  :</strong></td><td><strong>: </strong>R=5kW, L=5KVar, C=5KVar</td></tr>
+             <tr>
+                <td><strong>Load /phase</strong></td>
+                <td><strong>: </strong>
+                    - Resistive load steps:   0.5W(min)- 500W(max)
+                    - Inductive load steps:   0.5Var(min) - 500Var(max)
+                    - Capacitive load steps: 0.5Var(min) - 500Var(max)
+                </td>
+            </tr>
+            <tr><td><strong>Power Factor</strong></td><td><strong>: </strong>Leading and lagging power factor 0-1.0 adjustable</td></tr>
+            <tr><td><strong>Digital Meter</strong></td><td><strong>: </strong>voltage, current, active power, reactive power, apparent power, power factor, energy, frequency</td></tr>
+            <tr><td><strong>Auxiliary Supply</strong></td><td><strong>: </strong>230V 50Hz, single phase</td></tr>
+            <tr><td><strong>Control Modes</strong></td><td><strong>: </strong>Display on panels/ RS-485</td></tr>
+            <tr><td><strong>Insulation Class</strong></td><td><strong>: </strong>F</td></tr>
+            <tr><td><strong>Cooling Mode</strong></td><td><strong>: </strong>Force-air vertical cooling, by axial-flow fans</td></tr>
+            <tr><td><strong>Work Mode</strong></td><td><strong>: </strong>Continuous work</td></tr>
+            <tr><td><strong>Protections</strong></td><td><strong>: </strong>Overheating/Buzzer alarm, Overheating/Over current, over voltage, over load protection, emergency stop button</td></tr>
+            <tr><td><strong>Ambient Temperature</strong></td><td><strong>: </strong>-10°C ~ +50°C</td></tr>
+            <tr><td><strong>Mobility</strong></td><td><strong>: </strong>Four wheels</td></tr>
+            <tr><td><strong>Humidity</strong></td><td><strong>: </strong>≤95%</td></tr>
+        </table>
+    </div>
+
+    <!-- Right Side: Image with Transparency -->
+    <div style="flex: 0 0 300px; text-align: center;">
+        <br> <br><br>
+        <img src="rlc4.png" alt="Load Bank Image" style="width: 100%; opacity: 0.;border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.1);">
+        <p style="font-size: 14px; color: #141414;">Figure 3. Constant Power Control RLC Load Bank </p>
+    </div>
+
+            </ul>
+      </div>
+
+
+
+  <section class="section" aria-labelledby="RLC Load">
+               <div class="specs">
+                    <ul>
+           <h2 id="RLC Load:">DC Load:</h2>
+
+<div style="display: flex; align-items: flex-start; font-family: Arial, sans-serif; max-width: 1000px;">
+
+    <!-- Left Side: Technical Specs -->
+    <div style="flex: 1; padding-right: 20px;">
+        <h3 style="border-bottom: 2px solid #333; padding-bottom: 5px;">Technical Specifications</h3>
+        <table style="width: 100%; border-collapse: collapse; line-height: 1.6;">
+            <tr><td><strong>Model</strong></td><td><strong>: </strong>MatView-DC100V-10kW Load <b>ank-M10K/A10k</b></td></tr>
+            <tr><td><strong>Load Element</strong></td><td><strong>: </strong>Resistor</td></tr>
+            <tr><td><strong>Load Voltage</strong></td><td><strong>: </strong>DC-100V (Customization is also available)</td></tr>
+            <tr><td><strong>Load Steps</strong></td><td><strong>: </strong>Resistive load steps: 100W(min)-2kW(max)</td></tr>
+            <tr><td><strong>Digital Meter</strong></td><td><strong>: </strong>Voltage meter, Current meter</td></tr>
+            <tr><td><strong>Auxiliary Supply</strong></td><td><strong>: </strong> 230V 50Hz, singale phase</td></tr>
+            <tr><td><strong>Insulation Class</strong></td><td><strong>: </strong> F</td></tr>
+            <tr><td><strong> Cooling Modal</strong></td><td><strong>: </strong> Force-air vertical cooling, by axial-flow fan</td></tr>
+            <tr><td><strong> Work Mode</strong></td><td><strong>: </strong>  Continuous work</td></tr>
+            <tr><td><strong> Protections</strong></td><td> <strong>: </strong>Overheating/Buzzer alarm, Overheating/Over current, over voltage, over load protection, emergency stop button</td></tr>
+            <tr><td><strong>Ambient Temperature</strong></td><td> <strong>: </strong>-10℃～+50℃ </td></tr>
+            <tr><td><strong> Mobility</strong></td><td><strong>: </strong>Four wheels </td></tr>
+            <tr><td><strong> Humidity</strong></td><td> <strong>: </strong> ≤95%</td></tr>
+        </table>
+          </div>
+
+    <!-- Right Side: Image with Transparency -->
+    <div style="flex: 0 0 300px; text-align: center;">
+        <br> <br><br>
+        <img src="rlc3.png" alt="Load Bank Image" style="width: 100%; opacity: 0.;border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.1);">
+        <p style="font-size: 14px; color: #141414;">Figure 4. Manual Control DC load Bank </p>
+    </div>
+
+            </ul>
+      </div>
+
+</div>
+
+
+
+
+
+
+       <footer class="page-foot" role="contentinfo">
+                        &copy; 2025 MatView Private Limited. All rights reserved.
+    </footer>
+
+</body>
+</html>

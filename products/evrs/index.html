@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Electric Vehicle Research Solution| MatView</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset & basics */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html,body { height: 100%; }
+        body {
+            font-family:font-family:'sans', new times roman;
+            background: #f5f7fa;
+            color: #222;
+            line-height: 1.7;
+            -webkit-font-smoothing:antialiased;
+            -moz-osx-font-smoothing:grayscale;
+        }
+        a { color: inherit; text-decoration: none; }
+
+        /* Navigation (from about.html, refined) */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 40px;
+            background: #D1DBE6;
+            position: sticky;
+            top: 0;
+            z-index: 1200;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            flex-wrap: wrap;
+        }
+
+        .nav-left { display:flex; align-items:center; gap:14px; }
+        .logo { width:70px; height:auto; display:block; }
+        .text-group { display:flex; flex-direction:column; line-height:1; }
+        .title { font-size: 40px; font-weight:bold; color:#111c4e; font-family:'sans', new times roman; }
+        .tagline { font-size:18px; color:#71323B; font-weight:500; }
+
+        .nav-right { display:flex; gap:12px; flex-wrap:wrap; align-items:center; }
+        .nav-right a {
+            color:#002244;
+            font-size:18px;
+            padding:8px 16px;
+            border-radius:9999px;
+            background:transparent;
+            border: 2px solid #002244;
+            transition: transform .18s ease, background .18s ease, color .18s ease;
+        }
+        .nav-right a:hover {
+      background-color: #00ffe1;
+    color: #000;
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #00ffe1, 0 0 30px #00ffe1;
+}
+
+        /* Page container and hero */
+        .container { max-width:1100px; margin:28px auto; padding:0 18px; }
+        .hero {
+            background: linear-gradient(180deg, rgba(0,34,68,0.04), rgba(209,219,230,0.25));
+            border-radius:10px;
+            padding:28px;
+            text-align:center;
+            box-shadow: 0 8px 30px rgba(2,34,68,0.03);
+        }
+        .hero h1 { font-size:1.9rem; color:#002244; margin-bottom:8px; font-family:'sans', new times roman; }
+        .hero p { max-width:950px; margin:0 auto; color:#2b2b2b; font-size:1rem; }
+
+        /* Main content card (white background like original RETMS) */
+        main.content-card {
+            background: #fff;
+            margin-top:18px;
+            border-radius:10px;
+            padding:28px;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.04);
+        }
+
+        h2 { color:#003366; border-bottom:2px solid #e6f0fb; padding-bottom:6px; margin-top:28px; margin-bottom:12px; }
+        h3 { color:#004080; margin-top:20px; margin-bottom:8px; font-size:1.02rem; }
+        p, li { font-size:1rem; color:#333; }
+
+        ul { margin-left:18px; margin-top:8px; }
+        .two-column { display:flex; gap:24px; align-items:flex-start; margin-top:14px; }
+        .two-column .col { flex:1; }
+
+        /* Image block / figure */
+        figure { margin:18px 0; text-align:center; }
+        figure img { max-width:100%; border:3px solid #004080; border-radius:10px; box-shadow: 0 8px 20px rgba(0,0,0,0.08); }
+        figcaption { margin-top:8px; font-weight:600; color:#004080; font-size:0.95rem; }
+
+        /* Compact section cards for specification lists */
+        .specs, .advantages, .features { background: #fbfdff; padding:14px; border-radius:8px; margin-top:12px; border:1px solid #e7f0fb;}
+        .section { margin-top:18px; }
+
+
+
+
+        /* Responsive tweaks */
+        @media (max-width: 900px) {
+            .two-column { flex-direction:column; }
+            .nav-right { gap:8px; }
+            .hero h1 { font-size:1.5rem; }
+        }
+         footer.page-foot {
+            background: #002244;
+            color: #fff;
+            text-align:center;
+            padding:18px 10px;
+            margin-top:20px;
+            border-radius:6px;
+        }
+
+        @media (max-width: 520px) {
+            .nav-left .title { font-size:16px; }
+            .nav-right a { padding:7px 10px; font-size:14px; }
+            .hero { padding:18px; }
+            main.content-card { padding:18px; }
+        }
+    </style>
+</head>
+<body>
+         <!-- Navigation: copied from about.html and adapted -->
+    <nav aria-label="Primary navigation">
+        <div class="nav-left">
+            <img src="logo.png" alt="MatView Logo" class="logo" />
+            <div class="text-group">
+                <div class="title">Mat View</div>
+                <div class="tagline">Innovate &amp; Educate</div>
+            </div>
+        </div>
+        <div class="nav-right" role="navigation" aria-label="Main links">
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="service.html">Service</a>
+            <a href="policy.html">Policy</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Hero area (keeps the RETMS title and intro, now properly structured) -->
+        <section class="hero" aria-labelledby="page-title">
+               <h1>Electric Vehicle Research Solution</h1>
+               <p>Hands-on experience in designing, operating, and optimizing solar PV systems for students and professionals.</p>
+
+        </section>
+
+    <div class="section">
+        <!-- EVRS Banner Section -->
+<section style="background: url('ev4.png') no-repeat center center/cover; padding: 80px 0; color:#FFFFF0; text-align: center; border-radius: 20px; box-shadow: 0 8px 20px rgba(0,0,0,0.1);">
+    <h1 style="font-size: 3rem; font-weight: bold; margin: 0;">Electric Vehicle Research System</h1>
+    <p style="font-size: 1.2rem;color: #FFFFF0;">Experience the advanced Electric Vehicle Research System for accurate hardware-level simulations.</p>
+</section>
+
+<!-- EVRS Introduction -->
+<section style="padding: 60px 40px; max-width: 1200px; margin: auto;">
+    <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 40px;">
+        <div style="flex: 1 1 50%;">
+            <h2>Innovative Electric Vehicle Research Solution</h2>
+            <p>Electric vehicles (EVs) are reshaping the global market with their promise of sustainability, lower operating costs, and technological innovation. However, there remains a significant skills gap in the workforce, which often lacks practical, comprehensive training in EV systems.</p>
+            <p>MatView’s EVRS is designed specifically for universities and educational institutions to address this challenge. It provides hands-on experience and deep understanding of the following key EV components:</p>
+            <ul>
+                <li>Battery Technology</li>
+                <li>Drive Train Technology</li>
+                <li>Charging Technology</li>
+                <li>Power Electronics</li>
+                <li>Drive Cycle Simulations</li>
+                <li>Vehicle Dynamics</li>
+            </ul>
+        </div>
+        <div style="flex: 1 1 40%;">
+            <img src="Electric Vehicle Research Solution.png" alt="Electric Vehicle Research" style="width: 100%; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.1);">
+             <div class="caption">Figure 1: Electric Vehicle Research System </div>
+        </div>
+    </div>
+</section>
+
+<!-- EVRS Features Section -->
+<section style="padding: 60px 40px; background-color: #f9f9f9; max-width: 1200px; margin: auto;">
+    <h3>EVRS Key Features</h3>
+       <ul>
+        <li><strong>Comprehensive Learning:</strong> EVRS covers all aspects of EV tech with a holistic education module.</li>
+        <li><strong>Integrated Learning Environment:</strong> Modular car chassis with real EV components for hands-on training.</li>
+        <li><strong>Real-Time Simulations:</strong> Utilizes actual EV parts for accurate testing and validation.</li>
+        <li><strong>Customizable Control:</strong> Modify control algorithms with open-source software.</li>
+       </ul>
+
+    <h3>Research and Experimentation Opportunities</h3>
+    <ul>
+        <li><strong>Battery Systems:</strong> Analyze SoH, charging behaviors, and perform standards-aligned testing.</li>
+        <li><strong>Drive Cycle Simulations:</strong> Study efficiency, torque-speed characteristics, and simulate IDC, NEDC.</li>
+        <li><strong>EV Drive Line:</strong> Develop control algorithms, analyze efficiency in load conditions.</li>
+        <li><strong>EV Charging Systems:</strong> Study onboard/offboard charging, GB/T, CCS, CHAdeMO protocols.</li>
+    </ul>
+    <!-- Central Control Section -->
+
+
+     <ul>
+
+    <p></p>
+     </ul>
+
+ <section id="Central Control and Monitoring Unit" class="feature-block">
+  <div class="feature-container">
+    <!-- Text Content -->
+    <div class="feature-text">
+      <h2>Central Control and Monitoring Unit</h2>
+         <p style="font-style: italic;">Experience hardware-in-loop simulations using NI PXI Controller on NI LabView User Interface.</p>
+      <p>The Central Control Unit (CCU) is the core of the Electric Vehicle Research System (EVRS), designed to ensure seamless integration and efficient operation of all EV components. It acts as the brain of the system, managing and monitoring various subsystems in real-time.</p>
+      <h3>Key Features</h3>
+ <ul>
+         <p></p>
+
+        <h3>Real-Time Monitoring</h3>
+        <ul>
+          <li>Tracks performance metrics of all EV subsystems, including motors, batteries, chargers, and power electronics.</li>
+          <li>Provides real-time data visualization for enhanced understanding and analysis.</li>
+        </ul>
+
+        <h3>Comprehensive Integration</h3>
+        <ul>
+          <li>Communicates with all critical EV components, such as the Battery Management System (BMS), DC/DC converters, motor controllers, and charging systems.</li>
+          <li>Ensures seamless interaction and synchronization of all subsystems.</li>
+        </ul>
+
+
+        <h3>Customizable and Open-Source Platform</h3>
+        <ul>
+          <li>Built on an open-source architecture to allow customization of control algorithms.</li>
+          <li>Enables users to develop and test their own solutions tailored to specific research needs.</li>
+        </ul>
+
+
+        <h3>Data Logging and Analysis</h3>
+        <ul>
+          <li>Logs experimental data for further analysis, enabling students and researchers to identify trends, optimize performance, and validate their findings.</li>
+          <li>Supports exporting data in graphical and dataset formats for detailed reporting.</li>
+        </ul>
+
+
+        <h3>Safety and Reliability</h3>
+        <ul>
+          <li>Integrated with advanced safety protocols to monitor and mitigate risks during testing and operation.</li>
+          <li>Ensures stable operation under varying conditions.</li>
+        </ul>
+
+
+        <h3>User-Friendly Interface</h3>
+        <ul>
+          <li>Intuitive interface for controlling and managing all EV subsystems.</li>
+          <li>Compatible with tablets and mobile devices for remote access and control.</li>
+        </ul>
+           </p>
+     </ul>
+       </div>
+           &nbsp;
+           <!-- Image -->
+    <div class="feature-image">
+        <table>
+            <tr>
+                <td>
+      <img src="Electric Vehicle Research.png" alt="Electric Vehicle Research Top View" style="width: 60%; justify-content: center;border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.1);" >
+         <div class="caption; justify-content: center;">Figure 2: Central Control Unit </div>
+           </td>
+            <td>
+         <img src="EVRS control unit.png" alt="EVRS Control Unit" style="width:100%; justify-content: center;border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.1);">
+             <div class="caption; justify-content: center;">Figure 3 : NI PXI as a controller</div>
+            </td>
+             <td>
+           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              </td>
+             </tr>
+
+                </table>
+    </div>
+  </div>
+   </section>
+
+<section id="ac-dc-fast-charger" class="feature-block">
+  <div class="feature-container">
+    <!-- Text Content -->
+    <div class="feature-text">
+      <h2>AC to DC Fast Charger</h2>
+      <p>The AC to DC fast charger is designed to rapidly and efficiently charge EV batteries, adhering to global standards for fast charging protocols.</p>
+      <h3>Key Features</h3>
+      <ul>
+        <li><strong>High Efficiency:</strong> Converts alternating current (AC) to direct current (DC) with minimal energy loss.</li>
+        <li><strong>Standards Compliance:</strong> Supports fast-charging protocols like GB/T, CCS, and CHAdeMO.</li>
+        <li><strong>Dynamic Current Adjustment:</strong> Automatically adjusts output current based on the battery's charging state.</li>
+        <li><strong>Safety Mechanisms:</strong> Includes overvoltage, overcurrent, and thermal protection for safe operation.</li>
+        <li><strong>Real-Time Communication:</strong> Interfaces with the EVSE and vehicle BMS for optimized charging cycles.</li>
+        <li><strong>Compact Design:</strong> Ideal for research labs and educational setups.</li>
+      </ul>
+    </div>
+
+    <!-- Image -->
+    <div>
+      <img src="Electric Vehicle charging.png" alt="AC to DC Fast Charger" style="width:20%;justify-content: center; 10px;border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.1);"/>
+    <div class="caption; justify-content: center;">Figure 4 :DC Fast Charger</div>
+    </div>
+  </div>
+</section>
+
+<section id="motor-dynamo-set" class="feature-block">
+  <h2>Motor-Dynamo Set</h2>
+  <p>The motor-dynamo set is a versatile component used for energy regeneration, testing, and system analysis.</p>
+  <h3>Key Features</h3>
+  <ul>
+    <li><strong>Energy Regeneration:</strong> Functions as a generator to simulate regenerative braking and analyze energy recovery.</li>
+    <li><strong>Load Testing:</strong> Provides variable load conditions to test the performance of propulsion motors.</li>
+    <li><strong>High Efficiency:</strong> Achieves up to 92% efficiency for reliable experimentation.</li>
+    <li><strong>Thermal Management:</strong> Features internal fan cooling to maintain optimal operating temperatures.</li>
+    <li><strong>Flexible Testing Capabilities:</strong> Supports speed-torque analysis, friction torque evaluation, and dynamic performance testing.</li>
+    <li><strong>Robust Design:</strong> Built to handle continuous operation under demanding conditions.</li>
+  </ul>
+</section>
+
+<section id="onboard-charger" class="feature-block">
+  <h2>Onboard Charger</h2>
+  <p>The onboard charger is a critical EV component that facilitates efficient and safe battery charging using AC power.</p>
+  <h3>Key Features</h3>
+  <ul>
+    <li><strong>Integrated Design:</strong> Compact, lightweight charger installed directly in the EV system.</li>
+    <li><strong>Multi-Mode Charging:</strong> Supports Constant Current (CC) and Constant Voltage (CV) charging modes.</li>
+    <li><strong>Wide Voltage Range:</strong> Operates across a broad range of input voltages (90V to 230V AC).</li>
+    <li><strong>High Efficiency:</strong> Achieves efficiency levels of up to 90%, ensuring minimal energy loss.</li>
+    <li><strong>Communication Protocols:</strong> Interfaces with the BMS for optimal charging management.</li>
+    <li><strong>Safety Measures:</strong> Includes protections against overvoltage, overcurrent, and overheating.</li>
+  </ul>
+</section>
+
+<section id="lfp-battery" class="feature-block">
+  <h2>Lithium Iron Phosphate (LFP) Battery</h2>
+  <p>The LFP battery is a reliable and durable energy storage solution, widely used in EV systems due to its superior safety and longevity.</p>
+  <h3>Key Features</h3>
+  <ul>
+    <li><strong>High Thermal Stability:</strong> Resistant to thermal runaway, making it safer for EV applications.</li>
+    <li><strong>Long Cycle Life:</strong> Capable of over 3,000 charge-discharge cycles at 80% Depth of Discharge (DoD).</li>
+    <li><strong>Enhanced Energy Density:</strong> Offers balanced specific energy and power for efficient performance.</li>
+    <li><strong>Broad Operating Temperature Range:</strong> Functions effectively between -20°C and 55°C.</li>
+    <li><strong>Fast Charging Capability:</strong> Supports higher charging currents for reduced charging time.</li>
+    <li><strong>Eco-Friendly:</strong> Uses non-toxic materials, making it a sustainable choice.</li>
+  </ul>
+</section>
+
+<p class="note">These components collectively provide the foundation for comprehensive research, development, and education in EV technology.</p>
+
+    </main>
+    </div>
+</div>
+
+ <footer class="page-foot" role="contentinfo">
+                        &copy; 2025 MatView Private Limited. All rights reserved.
+ </footer>
+
+</body>
+</html>

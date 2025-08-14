@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Super Capacitor Training System| MatView</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset & basics */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html,body { height: 100%; }
+        body {
+            font-family:font-family:'sans', new times roman;
+            background: #f5f7fa;
+            color: #222;
+            line-height: 1.7;
+            -webkit-font-smoothing:antialiased;
+            -moz-osx-font-smoothing:grayscale;
+        }
+        a { color: inherit; text-decoration: none; }
+        .center-text {
+    text-align: center;
+}
+
+        /* Navigation (from about.html, refined) */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 40px;
+            background: #D1DBE6;
+            position: sticky;
+            top: 0;
+            z-index: 1200;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            flex-wrap: wrap;
+        }
+
+        .nav-left { display:flex; align-items:center; gap:14px; }
+        .logo { width:70px; height:auto; display:block; }
+        .text-group { display:flex; flex-direction:column; line-height:1; }
+        .title { font-size: 40px; font-weight:bold; color:#111c4e; font-family:'sans', new times roman; }
+        .tagline { font-size:18px; color:#71323B; font-weight:500; }
+
+        .nav-right { display:flex; gap:12px; flex-wrap:wrap; align-items:center; }
+        .nav-right a {
+            color:#002244;
+            font-size:18px;
+            padding:8px 16px;
+            border-radius:9999px;
+            background:transparent;
+            border: 2px solid #002244;
+            transition: transform .18s ease, background .18s ease, color .18s ease;
+        }
+        .nav-right a:hover {
+      background-color: #00ffe1;
+    color: #000;
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #00ffe1, 0 0 30px #00ffe1;
+}
+
+        /* Page container and hero */
+        .container { max-width:1100px; margin:28px auto; padding:0 18px; }
+        .hero {
+            background: linear-gradient(180deg, rgba(0,34,68,0.04), rgba(209,219,230,0.25));
+            border-radius:10px;
+            padding:28px;
+            text-align:center;
+            box-shadow: 0 8px 30px rgba(2,34,68,0.03);
+        }
+        .hero h1 { font-size:1.9rem; color:#002244; margin-bottom:8px; font-family:'sans', new times roman; }
+        .hero p { max-width:950px; margin:0 auto; color:#2b2b2b; font-size:1rem; }
+
+        /* Main content card (white background like original RETMS) */
+        main.content-card {
+            background: #fff;
+            margin-top:18px;
+            border-radius:10px;
+            padding:28px;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.04);
+        }
+
+        h2 { color:#003366; border-bottom:2px solid #e6f0fb; padding-bottom:6px; margin-top:28px; margin-bottom:12px; }
+        h3 { color:#004080; margin-top:20px; margin-bottom:8px; font-size:1.02rem; }
+        p, li { font-size:1rem; color:#333; }
+
+        ul { margin-left:18px; margin-top:8px; }
+        .two-column { display:flex; gap:24px; align-items:flex-start; margin-top:14px; }
+        .two-column .col { flex:1; }
+
+        /* Image block / figure */
+        figure { margin:18px 0; text-align:center; }
+        figure img { max-width:100%; border:3px solid #004080; border-radius:10px; box-shadow: 0 8px 20px rgba(0,0,0,0.08); }
+        figcaption { margin-top:8px; font-weight:600; color:#004080; font-size:0.95rem; }
+
+        /* Compact section cards for specification lists */
+        .specs, .advantages, .features { background: #fbfdff; padding:14px; border-radius:8px; margin-top:12px; border:1px solid #FFFFFF; }
+        .section { margin-top:18px; }
+
+        footer.page-foot {
+            background: #002244;
+            color: #fff;
+            text-align:center;
+            padding:18px 10px;
+            margin-top:20px;
+            border-radius:6px;
+        }
+
+    }
+
+            /* Responsive tweaks */
+        @media (max-width: 900px) {
+            .two-column { flex-direction:column; }
+            .nav-right { gap:8px; }
+            .hero h1 { font-size:1.5rem; }
+        }
+
+        @media (max-width: 520px) {
+            .nav-left .title { font-size:16px; }
+            .nav-right a { padding:7px 10px; font-size:14px; }
+            .hero { padding:18px; }
+            main.content-card { padding:18px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation: copied from about.html and adapted -->
+    <nav aria-label="Primary navigation">
+        <div class="nav-left">
+            <img src="logo.png" alt="MatView Logo" class="logo" />
+            <div class="text-group">
+                <div class="title">Mat View</div>
+                <div class="tagline">Innovate &amp; Educate</div>
+            </div>
+        </div>
+        <div class="nav-right" role="navigation" aria-label="Main links">
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="service.html">Service</a>
+            <a href="policy.html">Policy</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Hero area (keeps the RETMS title and intro, now properly structured) -->
+        <section class="hero" aria-labelledby="page-title">
+            <div class="section">
+        <!-- EVRS Banner Section -->
+<section style="background: url('111.png') no-repeat center center/cover; padding: -10px 0; color:#E3E3DE; text-align: center;">
+    <h1 style="font-size: 3rem; font-weight: bold; margin: 0;">Super Capacitor Training System</h1>
+
+
+</section>
+
+
+        </section>
+
+        <!-- Main content area: cleaned, structured and styled -->
+        <main class="content-card" id="content" role="main">
+
+
+            <section class="section" aria-labelledby="Power Supply">
+                <h2 id="Super Capacitor Training System :">Super Capacitor Training System:</h2>
+                <div class="specs">
+                    <ul>
+                   <p style="text-align: justify">The Supercapacitor Training System is an advanced educational platform designed to demonstrate the charging and discharging characteristics of supercapacitors (SCs). This system includes a supercapacitor module and an SC charger/discharger to analyze energy storage behavior, charge/discharge time, and power density. It also illustrates the practical applications of supercapacitors in electric vehicles (EVs) and EV charging stations, providing hands-on insights into their role in rapid energy transfer and sustainable energy solutions. Ideal for research, training, and industrial learning, this system bridges the gap between theoretical concepts and real-world implementation. </p>
+                    </ul>
+                </div>
+
+
+
+            <section class="section" aria-labelledby="weather-station">
+
+
+
+                 <div class="">
+                    <figure class="col">
+                        <img src="SC1.png" alt="" />
+                        <figcaption></figcaption>
+                    </figure>
+
+
+                <p style="margin-top:10px;">
+                    <ul>
+                     <div class="specs">
+                    <ul>
+                       <section class="section" aria-labelledby="Power Supply">
+                <h2 id="Introduction:">Introduction:</h2>
+
+                   <p style="text-align: justify">Super capacitors, also known as ultra-capacitors or electric double-layer capacitors (EDLCs), are energy storage devices that bridge the gap between conventional capacitors and batteries. Unlike traditional batteries, super capacitors offer ultra-fast charging and discharging capabilities, high power density, and an extended lifespan. Their ability to handle rapid energy bursts makes them an ideal solution for various industrial and automotive applications, including electric vehicle (EV) charging infrastructure.   </p>
+
+                     <h2><strong>Revolutionizing EV Charging Infrastructure</h2></strong>
+
+                     With the increasing adoption of EVs, fast charging stations demand a high surge of power, often leading to grid instability and power system collapses during peak load periods. Super capacitor modules play a crucial role in mitigating these challenges by:
+
+                     <li><strong>Providing Instantaneous Power: </strong> Acting as a buffer to supply high power without overloading the grid. </li>
+                     <li><strong> Reducing Peak Demand:</strong> Storing excess energy during off-peak hours and delivering it during peak demand.</li>
+                      <li><strong>Enhancing Charging Efficiency:</strong> Reducing the stress on electrical infrastructure by balancing power fluctuations.</li>
+                      Super capacitors are particularly useful in scenarios where multiple EV fast chargers are plugged in simultaneously, preventing sudden spikes in power demand and ensuring a stable and reliable energy supply.
+
+                       <h2><strong>Super Capacitor Module - Key Specifications</h2></strong>
+                       <li><strong>Capacitance:</strong>165F. </li>
+                       <li><strong>Voltage:</strong> 48V. </li>
+                       <li><strong>Energy Storage:</strong> 190.08 kJ.  </li>
+                       <li><strong>Series & Parallel Configuration:</strong> Modules can be connected in series to increase voltage or in parallel to increase total capacitance as per system requirements.</li>
+
+                        <div class="">
+                    <figure class="col">
+                        <img src="SC2.png" alt="" />
+                        <figcaption></figcaption>
+                    </figure>
+
+                          <h2><strong>Performance Calculations</h2></strong>
+
+                           <h2>1. Discharge at Constant Current (2A) to 50% Voltage</h2>
+    <p>The charge stored in the capacitor is given by:</p>
+    <div class="formula">Q = C × V</div>
+
+    <p><b>Maximum Charge:</b></p>
+    <div class="formula">Q<sub>max</sub> = 165F × 48V = 7920C</div>
+
+    <p><b>Charge at 50% Voltage:</b></p>
+    <div class="formula">Q<sub>50%</sub> = 165F × 24V = 3960C</div>
+
+    <p><b>Time required to discharge from 48V to 24V at 2A:</b></p>
+    <div class="formula">
+        t = (Q<sub>max</sub> − Q<sub>50%</sub>) / I<br>
+        t = (7920C − 3960C) / 2<br>
+        t = 1980 seconds ≈ 33 minutes
+    </div>
+
+    <p class="note">Time to discharge from 48V to 24V at 2A current rate: <b>33 minutes</b></p>
+
+    <hr>
+
+    <h2>2. Discharge at Constant Power (100W) to 50% Voltage</h2>
+
+    <p><b>The energy at 48V:</b></p>
+    <div class="formula">
+        E<sub>max</sub> = ½ × C × V²<br>
+        = ½ × 165 × (48)² = 190080 J ≈ 190.08 kJ
+    </div>
+
+    <p><b>The energy at 24V:</b></p>
+    <div class="formula">
+        E<sub>50%</sub> = ½ × C × V²<br>
+        = ½ × 165 × (24)² = 47520 J ≈ 47.52 kJ
+    </div>
+
+    <p>So, the energy discharged from 48V to 24V:</p>
+    <div class="formula">
+        E<sub>discharged</sub> = 190.08 − 47.52 = 142.56 kJ
+    </div>
+
+    <p><b>Time required to discharge at 100W:</b></p>
+    <div class="formula">
+        t = E<sub>discharged</sub> / P<br>
+        t = 142560 / 100 = 1425.6 seconds ≈ 23 minutes 45 seconds
+    </div>
+
+           <h2><strong> Applications of Super Capacitor Modules</h2></strong>
+
+                EV Fast Charging Stations: Balancing grid load and improving charging efficiency.
+
+                <li><strong>Renewable Energy Storage: Storing surplus energy from solar and wind sources.</strong> </li>
+               <li> <strong>Grid Stabilization: Preventing voltage fluctuations in power distribution networks.</strong> </li>
+                <li><strong>Industrial Power Backup: Providing instant power during outages and fluctuations.</strong>  </li>
+              <li> <strong> Railway & Automotive Systems: Enhancing energy efficiency in electric locomotives and hybrid vehicles.</strong>  </li>
+
+                 <h2><strong>Conclusion</h2></strong>
+                <p style="text-align: justify">The 165F, 48V Super Capacitor Module is an advanced energy storage solution that enhances power stability and efficiency in high-demand applications. Whether integrated into EV charging stations, renewable energy grids, or industrial power systems, these capacitors ensure optimized energy utilization while preventing power collapses and demand spikes. By leveraging these cutting-edge energy storage modules, industries can achieve greater efficiency, sustainability, and reliability in their operations.                                      </p>
+
+
+                       <p style="text-align: center;"></p>
+
+
+
+
+
+
+
+
+        </main>
+    </div>
+
+       <footer class="page-foot" role="contentinfo">
+                        &copy; 2025 MatView Private Limited. All rights reserved.
+    </footer>
+
+</body>
+</html>
