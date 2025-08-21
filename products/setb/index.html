@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Solar Emulator test Bench | MatView</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset & basics */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html,body { height: 100%; }
+        body {
+            font-family:font-family:'sans', new times roman;
+            background: #f5f7fa;
+            color: #222;
+            line-height: 1.7;
+            -webkit-font-smoothing:antialiased;
+            -moz-osx-font-smoothing:grayscale;
+        }
+        a { color: inherit; text-decoration: none; }
+        .center-text {
+    text-align: center;
+}
+
+        /* Navigation (from about.html, refined) */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 40px;
+            background: #D1DBE6;
+            position: sticky;
+            top: 0;
+            z-index: 1200;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            flex-wrap: wrap;
+        }
+
+        .nav-left { display:flex; align-items:center; gap:14px; }
+        .logo { width:70px; height:auto; display:block; }
+        .text-group { display:flex; flex-direction:column; line-height:1; }
+        .title { font-size: 40px; font-weight:bold; color:#111c4e; font-family:'sans', new times roman; }
+        .tagline { font-size:18px; color:#71323B; font-weight:500; }
+
+        .nav-right { display:flex; gap:12px; flex-wrap:wrap; align-items:center; }
+        .nav-right a {
+            color:#002244;
+            font-size:18px;
+            padding:8px 16px;
+            border-radius:9999px;
+            background:transparent;
+            border: 2px solid #002244;
+            transition: transform .18s ease, background .18s ease, color .18s ease;
+        }
+        .nav-right a:hover {
+      background-color: #00ffe1;
+    color: #000;
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #00ffe1, 0 0 30px #00ffe1;
+}
+
+        /* Page container and hero */
+        .container { max-width:1100px; margin:28px auto; padding:0 18px; }
+        .hero {
+            background: linear-gradient(180deg, rgba(0,34,68,0.04), rgba(209,219,230,0.25));
+            border-radius:10px;
+            padding:28px;
+            text-align:center;
+            box-shadow: 0 8px 30px rgba(2,34,68,0.03);
+        }
+        .hero h1 { font-size:1.9rem; color:#002244; margin-bottom:8px; font-family:'sans', new times roman; }
+        .hero p { max-width:950px; margin:0 auto; color:#2b2b2b; font-size:1rem; }
+
+        /* Main content card (white background like original RETMS) */
+        main.content-card {
+            background: #fff;
+            margin-top:18px;
+            border-radius:10px;
+            padding:28px;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.04);
+        }
+
+        h2 { color:#003366; border-bottom:2px solid #e6f0fb; padding-bottom:6px; margin-top:28px; margin-bottom:12px; }
+        h3 { color:#004080; margin-top:20px; margin-bottom:8px; font-size:1.02rem; }
+        p, li { font-size:1rem; color:#333; }
+
+        ul { margin-left:18px; margin-top:8px; }
+        .two-column { display:flex; gap:24px; align-items:flex-start; margin-top:14px; }
+        .two-column .col { flex:1; }
+
+        /* Image block / figure */
+        figure { margin:18px 0; text-align:center; }
+        figure img { max-width:100%; border:3px solid #004080; border-radius:10px; box-shadow: 0 8px 20px rgba(0,0,0,0.08); }
+        figcaption { margin-top:8px; font-weight:600; color:#004080; font-size:0.95rem; }
+
+        /* Compact section cards for specification lists */
+        .specs, .advantages, .features { background: #fbfdff; padding:14px; border-radius:8px; margin-top:12px; border:1px solid #FFFFFF; }
+        .section { margin-top:18px; }
+
+        footer.page-foot {
+            background: #002244;
+            color: #fff;
+            text-align:center;
+            padding:18px 10px;
+            margin-top:20px;
+            border-radius:6px;
+        }
+
+    }
+
+            /* Responsive tweaks */
+        @media (max-width: 900px) {
+            .two-column { flex-direction:column; }
+            .nav-right { gap:8px; }
+            .hero h1 { font-size:1.5rem; }
+        }
+
+        @media (max-width: 520px) {
+            .nav-left .title { font-size:16px; }
+            .nav-right a { padding:7px 10px; font-size:14px; }
+            .hero { padding:18px; }
+            main.content-card { padding:18px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation: copied from about.html and adapted -->
+    <nav aria-label="Primary navigation">
+        <div class="nav-left">
+            <img src="logo.png" alt="MatView Logo" class="logo" />
+            <div class="text-group">
+                <div class="title">Mat View</div>
+                <div class="tagline">Innovate &amp; Educate</div>
+            </div>
+        </div>
+        <div class="nav-right" role="navigation" aria-label="Main links">
+            <a href="../../">Home</a>
+            <a href="../../products/">Products</a>
+            <a href="../../about/">About</a>
+            <a href="../../contact/">Contact</a>
+            <a href="../../service/">Service</a>
+            <a href="../../policy/">Policy</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Hero area (keeps the RETMS title and intro, now properly structured) -->
+        <section class="hero" aria-labelledby="page-title">
+            <div class="section">
+        <!-- EVRS Banner Section -->
+<section style="background: url('111.png') no-repeat center center/cover; padding: 30px 0; color:#E3E3DE; text-align: center;">
+    <h1 style="font-size: 3rem; font-weight: bold; margin: 0;">Solar Emulator test Bench</h1>
+
+
+</section>
+
+
+        </section>
+
+        <!-- Main content area: cleaned, structured and styled -->
+        <main class="content-card" id="content" role="main">
+
+
+            <section class="section" aria-labelledby="Power Supply">
+                <h2 id="Solar Emulator test Bench :">Solar Emulator test Bench:</h2>
+                <div class="specs">
+
+
+
+
+            <section class="section" aria-labelledby="weather-station">
+
+
+
+                 <div class="">
+                    <figure class="col">
+                        <img src="set.png" alt="" />
+                        <figcaption></figcaption>
+                    </figure>
+
+
+                <p style="margin-top:10px;">
+                    <ul>
+                     <div class="specs">
+                    <ul>
+                        <p style="text-align: justify">The Solar Emulator Test Bench developed by MatView is an advanced platform designed to replicate real-world solar array characteristics in a controlled laboratory environment. At its core, the system integrates the MatView PV2000 DC power supply with dedicated emulation software to deliver accurate I-V curve simulation, enabling precise testing and validation of photovoltaic (PV) inverters.
+
+This test bench supports dynamic MPPT performance evaluation, environmental effect simulation, and real-time response analysis, ensuring reliable assessment of inverter efficiency under varying solar conditions. Its comprehensive data logging, intuitive control interface, and graphical visualization make it a powerful tool for research, product development, and educational applications.
+
+By combining hardware and software into a single integrated solution, the Solar Emulator Test Bench provides users with a professional, reliable, and user-friendly platform for advancing solar technology innovation.</p>
+                       <section class="section" aria-labelledby="Solar Emulator test Bench:">
+                <h2 id="Specification:">Specification:</h2>
+
+
+            <h2><strong>DC Power Supply</strong></h2>
+
+            <strong>Output Specifications</strong></li>
+
+              <li><strong>DC Voltage:</strong> 120V</li>
+              <li><strong>Rated Current:</strong> 20A</li>
+              <li><strong>Rated Power:</strong> 2000W</li>
+              <li><strong>Ripple & Noise (Max.):</strong> 800mVp-p</li>
+              <li><strong>Voltage Tolerance:</strong> ±1.0%</li>
+              <li><strong>Line Regulation:</strong> ±0.5%</li>
+              <li><strong>Load Regulation:</strong> ±0.5%</li>
+              <li><strong>Output voltage range:</strong> 20 ~ 120V</li>
+              <li><strong>Output Current range:</strong> 1 A to 25 A</li>
+                       <br>
+               <strong>Input Specifications</strong>
+              <li><strong>Voltage Range:</strong> 180 ~ 264VAC / 254 ~ 370VDC</li>
+              <li><strong>Frequency Range:</strong> 47 ~ 63Hz</li>
+              <li><strong>AC Current (Typ.):</strong> 16A @ 230VAC</li>
+              <li><strong>Efficiency (Typ.):</strong> 92%</li>
+              <li><strong>Power Factor (Typ.):</strong> PF = 0.95 @ 230VAC, full load</li>
+                        <br>
+               <strong>Protection Features</strong>
+              <li><strong>Over Current:</strong> 105 % to 120% of rated output power (shutdown, re-power on to recover)</li>
+              <li><strong>Over Voltage:</strong> 127V ~ 150V (shutdown, re-power on to recover)</li>
+              <li><strong>Short Circuit:</strong> Shut down and latch off, re-power on to recover</li>
+              <li><strong>Over Temperature:</strong> Shutdown, automatic recovery after cooling or re-power on</li>
+                          <br>
+               <strong>Operational Characteristics</strong>
+              <li><strong>Setup, Rise Time:</strong> 1000ms, 80ms @ 230VAC, full load </li>
+              <li><strong>Working Temperature:</strong> -20 ~ +65? (refer to derating curve)</li>
+              <li><strong>Working Humidity:</strong> 20 ~ 90% RH non-condensing</li>
+                          <br>
+              <strong>Communication</strong>
+             <li><strong>It Support CAN Communication protocol</strong></li>
+
+
+              <h2><strong>Inverter</strong> </h2>
+
+            </strong>Output</strong>
+                 <li><strong>Voltage Adjustment Range :</strong>38 ~ 100V</li>
+                 <li><strong>Rated Current :</strong>20A</li>
+                 <li><strong>Ripple & Noise (Max.) :</strong>300mVp-p</li>
+                 <li><strong>Efficiency (Typical @ 75% Load) :</strong>93%</li>
+                          <br>
+            <strong>Input</strong>
+                 <li><strong>AC Voltage Range:</strong> 180 ~ 264VAC </li>
+                 <li><strong>Frequency Range:</strong> 47 ~ 63Hz </li>
+                 <li><strong>Power Factor:</strong> 0.98 at 230VAC full load</li>
+                 <li><strong> Rated Input Power:</strong> 1800W</li>
+                 <li><strong>Inrush Current (Typ.):</strong> Cold start 35A at 230VAC </li>
+                 <li><strong>Leakage Current:</strong> <2mA at 230VAC</li>
+                       <br>
+            <strong>Protection</strong>
+                 <li><strong>Over Temperature:</strong> Shut down output, recovers automatically after cooling </li>
+                 <li><strong>Over Voltage:</strong> Shut down output voltage, re-power on to recover</li>
+                 <li><strong> Over Load:</strong> 105 ~ 115% rated output power </li>
+                 <li><strong> Short Circuit:</strong> Shut down output current, re-power on to recover</li>
+                     <br>
+            <strong>Environmental</strong>
+                 <li><strong>Working Temperature: </strong>-30°C to +70°C (Refer to derating curve) </li>
+                 <li><strong>Operating Humidity:</strong> 20 ~ 90% RH non-condensing  </li>
+                       <br>
+            <strong>Communication:</strong>
+                 <li><strong>It Support CAN Communication protocol</li>
+                   <br>
+             <h2><strong>Power Analyzer</strong> </h2>
+
+               <strong>Technical Specifications:</strong>
+                 <li><strong>Input Voltage:</strong> 57.7 to 346 VL-N (programmable)</li>
+                 <li><strong>Input Current:</strong> 1A or 5A (programmable)</li>
+                 <li><strong>Auxiliary Supply:</strong> 60 to 300V AC/DC or 12 to 60V AC/DC </li>
+                 <li><strong> Accuracy:</strong> Class 0.2S for active energy as per IEC 62053-22 </li>
+                 <li><strong>Display:</strong> 320x240 resolution touch-sensitive color graphics LCD </li>
+                 <li><strong>Communication:</strong> Optional MODBUS (RS485) and Ethernet (Modbus TCP/IP)</li>
+                 <li><strong>Dimensions:</strong> 96 x 96 x 80 mm</li>
+
+
+                      <h2><strong>PV Emulator Software</h2></strong>
+
+                      <div class="">
+                    <figure class="col">
+                        <img src="set2.png" alt="" />
+                        <figcaption></figcaption>
+                    </figure>
+
+
+                <p style="margin-top:10px;">
+                    <ul>
+                     <div class="specs">
+                    <ul>
+                     The software provided with the MatView PV2000 DC power supply is designed for accurate simulation of solar array I-V curves, enabling precise testing of photovoltaic (PV) inverters.
+                      <br>
+                      <h2><strong>Key Features:</strong>/<h2>
+                    <strong>Accurate I-V Curve Simulation</strong>
+                     <li> Precisely replicates the I-V characteristics of solar arrays. </li>
+                      <li>Simulates real-world PV conditions using parameters like Vmp (Voltage at Maximum Power) and Pmp (Power at Maximum Power).</li>
+                              <br>
+                    <strong>Dynamic Testing & Real-Time Response</strong>
+                        <li>Supports static and dynamic maximum power tracking (MPPT) performance testing of PV inverters.</li>
+                        <li>High-speed response ensures reliable and consistent power tracking evaluation.</li>
+                               <br>
+                    <strong>Environmental Effect Simulation</strong>
+                        <li>Adjusts I-V curves based on temperature and irradiation variations, mimicking real-world solar conditions.</li>
+                        <li>Comprehensive Measurement & Data Logging.</li>
+                        <li>High-precision voltage and current measurements.</li>
+                       <li> Provides detailed I-V curve analysis and report generation for performance evaluation.</li>
+                             <br>
+                  <strong> User-Friendly Interface</strong>
+                       <li>Intuitive controls for setting solar array characteristics.</li>
+                       <li>Graphical representation of I-V curves for easy interpretation.</li>
+                       <li>This software enables thorough validation of PV inverter efficiency, ensuring optimal performance under varying environmental conditions.</li>
+
+
+
+
+                       <p style="text-align: center;"></p>
+
+
+
+
+
+
+
+
+        </main>
+    </div>
+
+       <footer class="page-foot" role="contentinfo">
+                        &copy; 2025 MatView Private Limited. All rights reserved.
+    </footer>
+
+</body>
+</html>
