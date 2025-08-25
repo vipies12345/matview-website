@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Solar Array Simulator (SAS)| MatView</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset & basics */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html,body { height: 100%; }
+        body {
+            font-family:font-family:'sans', new times roman;
+            background: #f5f7fa;
+            color: #222;
+            line-height: 1.7;
+            -webkit-font-smoothing:antialiased;
+            -moz-osx-font-smoothing:grayscale;
+        }
+        a { color: inherit; text-decoration: none; }
+
+        /* Navigation (from about.html, refined) */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 40px;
+            background: #D1DBE6;
+            position: sticky;
+            top: 0;
+            z-index: 1200;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            flex-wrap: wrap;
+        }
+
+        .nav-left { display:flex; align-items:center; gap:14px; }
+        .logo { width:70px; height:auto; display:block; }
+        .text-group { display:flex; flex-direction:column; line-height:1; }
+        .title { font-size: 40px; font-weight:bold; color:#111c4e; font-family:'sans', new times roman; }
+        .tagline { font-size:18px; color:#71323B; font-weight:500; }
+
+        .nav-right { display:flex; gap:12px; flex-wrap:wrap; align-items:center; }
+        .nav-right a {
+            color:#002244;
+            font-size:18px;
+            padding:8px 16px;
+            border-radius:9999px;
+            background:transparent;
+            border: 2px solid #002244;
+            transition: transform .18s ease, background .18s ease, color .18s ease;
+        }
+        .nav-right a:hover {
+      background-color: #00ffe1;
+    color: #000;
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #00ffe1, 0 0 30px #00ffe1;
+}
+
+        /* Page container and hero */
+        .container { max-width:1100px; margin:28px auto; padding:0 18px; }
+        .hero {
+            background: linear-gradient(180deg, rgba(0,34,68,0.04), rgba(209,219,230,0.25));
+            border-radius:10px;
+            padding:28px;
+            text-align:center;
+            box-shadow: 0 8px 30px rgba(2,34,68,0.03);
+        }
+        .hero h1 { font-size:1.9rem; color:#002244; margin-bottom:8px; font-family:'sans', new times roman; }
+        .hero p { max-width:950px; margin:0 auto; color:#2b2b2b; font-size:1rem; }
+
+        /* Main content card (white background like original RETMS) */
+        main.content-card {
+            background: #fff;
+            margin-top:18px;
+            border-radius:10px;
+            padding:28px;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.04);
+        }
+
+        h2 { color:#003366; border-bottom:2px solid #e6f0fb; padding-bottom:6px; margin-top:28px; margin-bottom:12px; }
+        h3 { color:#004080; margin-top:20px; margin-bottom:8px; font-size:1.02rem; }
+        p, li { font-size:1rem; color:#333; }
+
+        ul { margin-left:18px; margin-top:8px; }
+        .two-column { display:flex; gap:24px; align-items:flex-start; margin-top:14px; }
+        .two-column .col { flex:1; }
+
+        /* Image block / figure */
+        figure { margin:18px 0; text-align:center; }
+        figure img { max-width:100%; border:3px solid #004080; border-radius:10px; box-shadow: 0 8px 20px rgba(0,0,0,0.08); }
+        figcaption { margin-top:8px; font-weight:600; color:#004080; font-size:0.95rem; }
+
+        /* Compact section cards for specification lists */
+        .specs, .advantages, .features { background: #fbfdff; padding:14px; border-radius:8px; margin-top:12px; border:1px solid #FFFFFF; }
+        .section { margin-top:18px; }
+
+        footer.page-foot {
+            background: #002244;
+            color: #fff;
+            text-align:center;
+            padding:18px 10px;
+            margin-top:20px;
+            border-radius:6px;
+        }
+
+    }
+
+            /* Responsive tweaks */
+        @media (max-width: 900px) {
+            .two-column { flex-direction:column; }
+            .nav-right { gap:8px; }
+            .hero h1 { font-size:1.5rem; }
+        }
+
+        @media (max-width: 520px) {
+            .nav-left .title { font-size:16px; }
+            .nav-right a { padding:7px 10px; font-size:14px; }
+            .hero { padding:18px; }
+            main.content-card { padding:18px; }
+        }
+
+        <meta charset="UTF-8">
+  <title>Features Section</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      padding: 10px;
+    }
+
+    .heading {
+      display: inline-block;
+      font-size:20px;
+      font-weight: bold;
+      color: #fff;
+      padding: 5px 30px;
+      border-radius: 8px;
+      background: linear-gradient(to right, #0d47a1, #2D90E6, #ADD8FB);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+      position: relative;
+      overflow: hidden;
+      letter-spacing: 1px;
+    }
+
+    .heading::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 20px;
+      background: #002171; /* Blue strip */
+    }
+
+
+    /* Glow animation */
+    .heading:hover {
+      box-shadow: 0 6px 16px rgba(30, 136, 229, 0.6);
+      transform: scale(1.03);
+      transition: all 0.3s ease;
+    }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation: copied from about.html and adapted -->
+    <nav aria-label="Primary navigation">
+        <div class="nav-left">
+            <img src="logo.png" alt="MatView Logo" class="logo" />
+            <div class="text-group">
+                <div class="title">Mat View</div>
+                <div class="tagline">Innovate &amp; Educate</div>
+            </div>
+        </div>
+        <div class="nav-right" role="navigation" aria-label="Main links">
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="service.html">Service</a>
+            <a href="policy.html">Policy</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Hero area (keeps the RETMS title and intro, now properly structured) -->
+        <section class="hero" aria-labelledby="page-title">
+            <div class="section">
+        <!-- EVRS Banner Section -->
+<section style="background: url('111.png') no-repeat center center/cover; padding: -5px 0; color:#E3E3DE; text-align: center;">
+    <h1 style="font-size: 3rem; font-weight: bold; margin: 0;">Solar Array Simulator </h1>
+    <p style="font-size: 1.2rem;">Accurate I-V curve simulation for reliable photovoltaic inverter testing with advanced features and benefits.
+</section>
+
+
+        </section>
+
+        <!-- Main content area: cleaned, structured and styled -->
+        <main class="content-card" id="content" role="main">
+
+
+            <section class="section" aria-labelledby="Power Supply">
+                <h2 id="Solar Array Simulator (SAS):">Solar Array Simulator (SAS):</h2>
+                <div class="specs">
+                    <ul>
+                     <p style="text-align: justify">Solar array simulation software, when used with a high-performance DC power supply, can accurately simulate the I-V curve of solar arrays. This system features precise measurements, high stability, and fast response times. With built-in parameters like Vmp (Voltage at Maximum Power) and Pmp (Power at Maximum Power), it can effectively generate the I-V curve output and produce reports. These capabilities greatly assist in testing both the static and dynamic maximum power tracking performance of photovoltaic inverters. </p>
+                    </ul>
+                </div>
+
+
+
+            <section class="section" aria-labelledby="weather-station">
+
+
+
+                 <div class="">
+                    <figure class="col">
+                        <img src="sas1.png" alt=""style="width:500px; height:auto;"  />
+                        <figcaption>Fig-1: Solar Array Simulator</figcaption>
+                        <figcaption></figcaption>
+                    </figure>
+
+
+                <p style="margin-top:10px;">
+                    <ul>
+                     <div class="specs">
+                    <ul>
+                       <section class="section" aria-labelledby="Power Supply">
+                <h2 id="Solar Array Simulator:">MATVIEW SAS2000 Solar Array Emulator:</h2>
+                <div class="specs">
+                    The SAS2000 Solar Array Emulator, combined with high-performance DC power supplies, offers precise I-V curve simulation for accurate and stable photovoltaic inverter testing.
+                     <h2 id="Power Supply:">Key Features and Benefits:</h2>
+                      <ul><li><strong>Accurate Testing:</strong> Supports easy programming of key parameters like Vmp and Pmp, enabling precise I-V characteristic simulation and MPPT performance evaluation through comprehensive report generation.</li></ul>
+                      <br>
+                     <ul> <li><strong>Shadow and Table Modes:</strong> Shadow mode creates and edits shielded I-V curves for dynamic shading tests, while Table mode enables I-V curve simulation under varying temperatures and irradiation for in-depth MPPT efficiency assessment.</li></ul>
+                       <br>
+                      <ul><li><strong>Multi-Channel and 24-Hour Simulation:</strong> Allows multi-channel MPPT testing, simulating real environmental conditions for micro-grids, distributed PV systems, and core equipment over a 24-hour period.</li></ul>
+                     <p>The SAS2000 is an all-in-one solution for reliable and accurate testing of photovoltaic power systems, ideal for optimizing system performance across diverse conditions.</p>
+                     <h2 class="heading">Features</h2>
+                          <br>
+                     <ul><li><strong>High Voltage and Power Range:</strong> Output voltage up to 500V, with a maximum power capacity of 5kW.</li> </ul>
+                      <br>
+                      <ul><li> <strong> Multi-Channel MPPT Support:</strong> Supports up to 2 power supplies, enabling comprehensive testing for multi-channel MPPT (Maximum Power Point Tracking).</li></ul>
+
+                  <h2><strong>Advanced Solar Array Simulation:</strong></h2>
+                  <li>Built-in I-V curve mathematical formulas simulate accurate I-V output.</li>
+                 <li> Capable of simulating output characteristics of various solar cell types, including monocrystalline, polysilicon, and thin-film cells, with customizable Fill Factor (FF).</li>
+                 <li> Dynamic simulation of I-V curves under varying temperature and irradiation conditions, including shadowed scenarios.</li>
+
+                  <ul>
+                    <li> <strong>Graphical Interface: </strong> Real-time monitoring and display of MPPT states in PV inverters, with a user-friendly, graphical software interface.</li>
+                    <li> <strong>Automated Program Control: </strong> Supports auto-programming of I-V curves through key parameters like Vm, Pm, FF, cell materials, and regulatory points.</li>
+                    <li> <strong>High-Resolution Control: </strong> Allows for precise I-V curve programming with up to 100 x 128-point curves and a 4096-point matrix.</li>
+                    <li> <strong>Versatile Curve Management: </strong> Pre-program multiple I-V curves (Vmp, Imp, Voc, Isc) with the ability to switch configurations online for continuous testing adaptability.</li>
+                    <li> <strong>List Mode:</strong>  Facilitates quick access to pre-defined test scenarios, enhancing efficiency and flexibility in testing processes.</li>
+
+                 <p>The MATVIEW SAS2000 is engineered to support a broad spectrum of photovoltaic system testing requirements, providing a robust tool for performance analysis and optimization.</p>
+                    <h2 class="heading">Applications</h2>
+
+                     <li> <strong>MPPT Circuit and Algorithm Testing:</li> </strong>
+                    <li> <strong>Inverter MPP Voltage Range Validation:</li> </strong>
+                    <li> <strong>Static MPPT Efficiency Verification:</li> </strong>
+                    <li> <strong>Dynamic Curve MPPT Testing:</li> </strong>
+                    <li> <strong>Electrical Parameter Validation:</li> </strong>
+                    <li> <strong>Partial Shading MPPT Testing</li> </strong>
+                    <li> <strong>Inverter Safety Testing</li> </strong>
+                    <li> <strong>Micro-Grid Control Verification</li> </strong>
+                   <li> <strong>Day-Long MPPT Performance Validation</li> </strong>
+                   <li> <strong>Inverter Efficiency Measurement </li> </strong>
+                         </ul>
+                 These applications provide a comprehensive testing solution, enhancing reliability and efficiency across various photovoltaic inverter and system scenarios.
+
+                   <div class="">
+                    <figure class="col">
+                        <img src="sas222.png" alt=""style="width:500px; height:auto;"  />
+                        <figcaption>Fig-2: System architecture</figcaption>
+                        <figcaption></figcaption>
+                    </figure>
+
+                    <h2 class="heading">Graphical software interfface</h2>
+
+                    <p><p style="text-align: justify">The performance of solar cells varies due to factors like weather, season, temperature, irradiation, and cloud cover, affecting their I-V characteristics. To maximize efficiency, PV inverters use MPPT (Maximum Power Point Tracking) to continuously adjust the cell's operating point to stay near its peak power output.</p></p>
+                    <p><p style="text-align: justify">The SAS2000 Solar Array Simulation Software enables realistic lab simulation of solar cell arrays, allowing static and dynamic MPPT performance testing for photovoltaic inverters. It supports pre-programmed I-V curves (Vmp, Imp, Voc, Isc) and includes an online switching function. Users can also adjust parameters like Voc, Vmp, Isc, Imp, illuminance, and temperature in real-time, ensuring precise, accurate testing.</p></p>
+
+                      <div class="">
+                    <figure class="col">
+                        <img src="sas2.png" alt=""style="width:500px; height:auto;"  />
+                        <figcaption>Fig-3:software interfface</figcaption>
+                        <figcaption></figcaption>
+                    </figure>
+
+                    <p><p style="text-align: justify">The software includes Shadow, Table, and List modes, allowing users to program arrays of 128-4096 points to simulate dynamic shadow effects. Users can also draw I-V curves under various temperature and irradiation conditions, supporting long-term MPPT performance evaluation under diverse climates.</p></p>
+
+            <div class="">
+                    <figure class="col">
+                        <img src="sas3.png" alt=""style="width:500px; height:auto;"  />
+                        <figcaption>Fig-4:software interfface</figcaption>
+                        <figcaption></figcaption>
+                    </figure>
+
+             <h2 class="heading">Specifications</h2>
+                <ul>
+                <span style="font-size: 20px"><h1><strong>Solar PV Emulator </h1></strong></span>
+                 <li> <strong>Total Capacity: 3kW <strong>  </li>
+                  </ul>
+        <span style="font-size: 20px"><h1><strong>Input</strong></h1></span>
+             <ul> <li> <strong>Supply Voltage: 230V AC, 50Hz </li> <strong>   </ul>
+
+       <span style="font-size: 20px"> <h1><strong>Output</strong></h1></span>
+          <ul>
+         <li> <strong>Channels: 2</strong></li>
+          <li> <strong>Short Circuit Current (Isc) per Channel:</strong> 0 to 15 A</li>
+          <li> <strong>Open Circuit Voltage (Voc) per Channel:</strong> 0 to 120 VDC</li>
+          <li> <strong>Max Output Power per Channel:</strong> 1500 W</li>
+          <li> <strong>Parallel Channels:</strong> Up to 2</li>
+          <li> <strong>Max Absolute Output Voltage:</strong> 120 VDC</li>
+         <li> <strong> Voltage Slew Rate Range:</strong> 0.01 V/ms to 2 V/ms</li>
+         <li> <strong>Current Slew Rate Range:</strong> 0.01 A/ms to 1 A/ms (or</li>
+
+         <span style="font-size: 20px"> <h1><strong>Physical Box</strong></h1></span>
+         <li> <strong>Output Connector:</strong> Banana Type</li>
+          <li> <strong>Output Connector Leads:</strong> 4</li>
+        <span style="font-size: 20px"> <h1><strong>Operating Environment</strong></h1></span>
+          <li> <strong>Usage:</strong> Indoor Only </li>
+
+
+               </ul>
+             </div>
+
+
+
+
+
+             </ul>
+
+                </p>
+            </section>
+
+            <section class="section" aria-labelledby="load-unit">
+
+
+        </main>
+    </div>
+
+       <footer class="page-foot" role="contentinfo">
+                        &copy; 2025 MatView Private Limited. All rights reserved.
+    </footer>
+
+</body>
+</html>
